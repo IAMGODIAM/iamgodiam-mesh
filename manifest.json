@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-04-16T01:21:05.235633Z",
+  "total_pages": 10038,
+  "total_html_files": 10040,
+  "errors": 0,
+  "merkle_root": "28708423dd694512388b8da2145d31acd5f6c880ac2ce59dcfc8633b17974370",
+  "quality": "TheBook standard \u2014 #070710 bg, Georgia serif, starfield, chatbot every hub",
+  "clusters": 50,
+  "dag": "atlas-10k-engine-v2-2026-0415",
+  "batch2_complete": true,
+  "batch2_clusters": 30,
+  "batch3_complete": true,
+  "final_batch_complete": true
+}
