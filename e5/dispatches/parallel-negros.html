@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parallel Negros — Dispatch № I · E5 Enclave</title>
+<meta name="description" content="A foundational comparative dispatch from E5 Enclave — examining parallel architectures in American history.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/f697592b6_shared.css">
+<link rel="stylesheet" href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/88cc2d691_dispatch.css">
+</head>
+<body class="pal-parallel">
+<div class="phase-strip">
+  <span class="phase-strip-l">Liberty City · Established MMXXIV</span>
+  <span class="phase-strip-c">✦</span>
+  <span class="phase-strip-r">Eden Launch · 17 February MMXXVII</span>
+</div>
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/68c708a1f_index.html" class="nav-wordmark"><span class="wm-e5"><em>E5</em></span><span class="wm-enc">ENCLAVE</span></a>
+    <div class="nav-links">
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b5e0053a6_doctrine.html">Doctrine</a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/0628dd8c3_pillars.html">Pillars</a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/0ef6b15c2_index.html">The Record</a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/e91962934_restitution.html">Restitution 246</a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b8cbea39c_coalition.html">Coalition</a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b8cbea39c_coalition.html#join" class="nav-cta">Join</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"
+      onclick="this.closest('.site-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.closest('.site-nav').classList.contains('open'))">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="dispatch-progress" style="position:fixed;top:46px;left:0;height:2px;background:var(--accent,#6d1f20);width:0%;z-index:200;transition:width .1s;"></div>
+<div style="display:flex;min-height:100vh;">
+  <!-- APPARATUS RAIL - sticky left -->
+  <aside id="apparatus" style="width:220px;flex-shrink:0;padding:40px 24px;border-right:1px solid rgba(0,0,0,.12);position:sticky;top:46px;height:calc(100vh - 46px);overflow-y:auto;display:flex;flex-direction:column;gap:16px;">
+    <p style="font-size:8px;letter-spacing:.45em;text-transform:uppercase;color:var(--oxblood,#6d1f20);font-weight:600;margin:0 0 4px;">Dispatch № I</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--ink,#0a0908);margin:0 0 20px;line-height:1.3;">Parallel Negros</p>
+    <div id="chapter-list" style="display:flex;flex-direction:column;gap:8px;flex:1;">
+      <!-- populated by JS -->
+    </div>
+    <div style="border-top:1px solid rgba(0,0,0,.12);padding-top:16px;margin-top:auto;">
+      <button onclick="window.print()" style="font-size:8px;letter-spacing:.4em;text-transform:uppercase;background:none;border:1px solid rgba(0,0,0,.2);padding:8px 12px;cursor:pointer;color:var(--ink,#0a0908);width:100%;font-family:'Inter',sans-serif;transition:.2s;" onmouseover="this.style.background='rgba(0,0,0,.06)'" onmouseout="this.style.background='none'">Print / Archive</button>
+      <button onclick="copyCite()" style="margin-top:8px;font-size:8px;letter-spacing:.4em;text-transform:uppercase;background:none;border:1px solid rgba(0,0,0,.2);padding:8px 12px;cursor:pointer;color:var(--ink,#0a0908);width:100%;font-family:'Inter',sans-serif;transition:.2s;" onmouseover="this.style.background='rgba(0,0,0,.06)'" onmouseout="this.style.background='none'" id="cite-btn">Cite</button>
+    </div>
+  </aside>
+  <!-- MAIN CONTENT -->
+  <div style="flex:1;min-width:0;">
+    <!-- PLATE / COVER -->
+    <header style="padding:80px 64px 60px;border-bottom:1.5px solid var(--ink,#0a0908);">
+      <p style="font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:var(--accent,#6d1f20);font-weight:600;margin:0 0 12px;">Think Tank Dispatch</p>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(56px,8vw,120px);letter-spacing:-.03em;line-height:.88;margin:0 0 24px;">Parallel Negros</h1>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,2vw,26px);color:rgba(0,0,0,.5);max-width:60ch;line-height:1.45;margin:0 0 32px;">A foundational comparative dispatch examining the parallel architectures that shape the lineage's path through American history, and the institutional remedies they require.</p>
+      <div style="display:flex;gap:32px;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(0,0,0,.4);">
+        <span>Israel Lee</span><span>·</span><span>E5 Enclave</span><span>·</span><span>MMXXVI</span>
+      </div>
+    </header>
+    <!-- ARTICLE BODY -->
+    <article style="padding:0 64px 80px;max-width:900px;" id="article-body">
+      
+
+<div class="dl-bar no-print">
+  <span class="brand">IAMGODIAM · E5 ENCLAVE</span>
+  <button class="dl-btn" onclick="window.print()">⬇ Download PDF</button>
+</div>
+
+<div class="cover cover-block">
+  <div class="org">E5 Enclave Incorporated · IAMGODIAM</div>
+  <hr class="divider">
+  <h1>Parallel Negros</h1>
+  <div class="subtitle">Semantic Coincidence, Commercial Diaspora, and the Creolization of Upper Guinea, 1492–1685</div>
+  <hr class="divider">
+  <div class="meta">
+    Published by E5 Enclave Incorporated · IAMGODIAM<br>Formatted for Academic Distribution — April 2026<br>CC0 1.0 Universal — Public Domain<br>Keywords: Upper Guinea · Sephardic diaspora · creolization · polysemy · Code Noir · lançados
+  </div>
+</div>
+
+
+<div class="section" id="abstract">
+<div class="chapter-label">Abstract</div>
+<h2 class="section-title">Abstract</h2>
+<p>This article reframes a long-standing puzzle in early-modern Atlantic historiography: the coincidence between <em>negro</em> as a racial/ethnonymic term emerging in Iberian usage from the fourteenth century and <em>Negro</em> as a cognomen borne by a Sephardic lineage — the Ibn Yaḥya — from the twelfth. Earlier accounts have read the coincidence either as accident or as sequential conscription, in which one sense displaced the other. Drawing on the linguistics of polysemy and the documentary reality of the Upper Guinea commercial diaspora, I argue instead that the two senses are parallel semantic outputs of a single Latin etymon, <em>niger</em>, each activated within its own discourse community. The argument foregrounds its nature as synthesis rather than discovery: it integrates work by Peter Mark and José da Silva Horta, Toby Green, David Wheat, Daviken Studnicki-Gizbert, Linda Heywood and John Thornton, and Jonathan Schorsch within a desire-based analytical frame drawn from Eve Tuck. The structural geography of Sephardic and New Christian commerce in the Petite Côte, the Gambia, Casamance, and Cabo Verde overlaps, but does not demographically coincide, with the Upper Guinea slaving complex of c. 1500–1640. The merchants who most fully inhabited this geography participated marginally in slaving and fully in blade-weapons commerce. The article's contribution is to hold semantic coincidence and commercial creolization within a single frame without collapsing either into the other.</p>
+<p><strong>Keywords:</strong> Upper Guinea; Sephardic diaspora; creolization; Petite Côte; Atlantic slave trade; polysemy; Code Noir; lançados</p>
+</div>
+
+<div class="section" id="intro">
+<div class="chapter-label">Introduction</div>
+<h2 class="section-title">Introduction</h2>
+<p>The Sephardic world and the Atlantic slave trade share, on the page, a word. <em>Negro</em> in sixteenth- and seventeenth-century Iberian documents names both a category of enslaved African and a cognomen borne by an illustrious rabbinic family, the Ibn Yaḥya, from the twelfth century forward. The coincidence has tempted two kinds of historiography. The first treats it as accident — a homograph without analytic weight. The second treats it as sequence: a Jewish cognomen captured, or <em>conscripted</em>, by the racial apparatus that emerged in Iberia and Upper Guinea over the fifteenth and sixteenth centuries, so that the later meaning erases or displaces the earlier. Both readings are unsatisfactory. The first is historiographically incurious; the second projects a twentieth-century logic of racial formation backward onto documents whose internal grammar resists it.</p>
+<p>This article proposes a third reading. Drawing on the linguistics of polysemy as developed by D. Alan Cruse and by Elizabeth Closs Traugott and Richard Dasher, I argue that the two <em>negros</em> are <strong>parallel semantic outputs of the Latin etymon <em>niger</em></strong>, each activated within a distinct discourse community and neither derived from the other. The onymization (proper-name formation) of <em>Negro</em> in the Ibn Yaḥya line and the ethnonymization of <em>negro</em> in Portuguese slaving documents are independent paths through the same polysemic field. What looks like continuity is, on the evidence, coincidence — but coincidence of a structured kind, since both uses sit in Latinate systems where black/dark served simultaneously as a property of persons, lands, soils, and (metaphorically) origins.</p>
+<p>The second move is structural rather than linguistic. The Sephardic and New Christian commercial diaspora established a distinctive presence in Upper Guinea — Cacheu, Bugendo, the Casamance, the Gambia, Sierra Leone, Cabo Verde, and the Petite Côte of Senegal, especially Joal and Porto d'Ale (Portudal) — between roughly 1500 and 1640. That geography <strong>overlaps</strong> with the rising Upper Guinea slaving complex of the same period. Yet, as Peter Mark and José da Silva Horta have shown for the Petite Côte, the merchants who most fully inhabited the Sephardic-commercial geography participated <strong>marginally</strong> in slaving and <strong>fully</strong> in the blade-weapons trade. Structural overlap is not demographic coincidence.</p>
+<p>The article's third move is methodological. Following Eve Tuck's "Suspending Damage: A Letter to Communities," I treat the figures and networks at the center of this history — Jacob Peregrino and his son Manuel, Moisés de Mesquita, the Vaz de Sousa brothers, the Nharas of the Rivers of Guinea, the Wolof and Kassanké courts — as agents of survivance and self-determination, not as damage-data.</p>
+<p>The claim made here is a synthesis, not a discovery. Each of its components is the work of prior scholarship — Mark and Horta on the Petite Côte, Toby Green on Cabo Verde and the Kassanké, David Wheat on tangomãos and Upper Guinea ethnonyms, Daviken Studnicki-Gizbert on the Portuguese Nation, Linda Heywood and John Thornton on Central Africa, Jonathan Schorsch on Sephardic slaveholding — and this article contributes not new archival discovery but a reorganization of how those components fit, anchored in a more defensible linguistic account of the <em>negro</em> coincidence and calibrated by a more honest reading of the documentary record of the Ibn Yaḥya cognomen.</p>
+</div>
+
+<div class="section" id="two-negros">
+<div class="chapter-label">Linguistics</div>
+<h2 class="section-title">Two <em>negros</em>: Parallel Semantic Outputs of Latin <em>niger</em></h2>
+<p>Polysemy — the capacity of a single lexeme to carry multiple related senses simultaneously — is the normal condition of natural-language vocabulary, not a disorder of it. Cruse's <em>Meaning in Language</em> distinguishes sense-variation within a lexical unit ("facets," "microsenses") from the sharper split of homonymy, and stresses that polysemic senses are generated by productive processes that operate on stable etyma across discourse communities. Traugott and Dasher's <em>Regularity in Semantic Change</em> formalizes the diachronic counterpart: semantic change proceeds by regular, pragmatically driven inference patterns, with the same etymon spawning divergent senses in adjacent domains when speakers in those domains import context-bound implicatures into the lexeme.</p>
+<p>Latin <em>niger</em> is the etymon. De Vaan's <em>Etymological Dictionary of Latin</em> situates <em>niger</em> in its Indo-European nexus; Meyer-Lübke's REW §5917 gives the Romance descent; Corominas and Pascual's DCECH, s.v. <em>negro</em>, traces the Castilian/Portuguese development with its full range of nominal and adjectival uses, from color-term to onomastic element to ethnonym. Across these authorities, the shared lesson is that <em>niger</em> &gt; Iberian <em>negro</em> is not a single trajectory but a fan of trajectories, each activated in a different discourse community: the chromatic ("black" as color), the geographic ("black" as attribute of land, river, soil — <em>terra negra</em>, <em>Rio Negro</em>), the onomastic (<em>el Negro</em> as a nickname fixed as surname), and, from the fourteenth century, the ethnonymic (<em>moro negro</em> and, later, <em>negro</em> standalone).</p>
+<h3>Two Iberian Attestations</h3>
+<p>Two Iberian attestations anchor the ethnonymic trajectory in the fourteenth and fifteenth centuries. The earliest is the 1332 Almoster document, preserved at the Arquivo Nacional da Torre do Tombo (ANTT, Convento de Almoster, Livro 5, nos. 19 and 26), which records the sale of a "<em>moro negro de color e capel crespo</em>" and, in a parallel deed of the same year, a "<em>moro branco de color</em>." James H. Sweet identified the documents in "The Iberian Roots of American Racist Thought" (1997): "As early as 1332, documents relating to the sales of slaves show Christians differentiating white from black Moors." The second attestation is Gomes Eanes de Zurara's <em>Crónica dos feitos de Guiné</em>, chapter 25, whose description of the 1444 Lagos auction divides the captives according to skin color — "<em>brancos</em>," "<em>baços</em>," and "<em>negros</em>" — in an idiom already legible as ethnonymic rather than purely chromatic.</p>
+<p>What matters for the argument is that this ethnonymic trajectory is already running by 1332 — that is, more than a century after the onomastic application of <em>Negro</em> to the Ibn Yaḥya line, and centuries before the "conscription" hypothesis would require. The two <em>negros</em> do not sit in sequence; they sit in parallel, each derived from the same Latin etymon by a different productive process, each belonging to its own discourse community. Polysemy, not conscription, is the right frame.</p>
+</div>
+
+<div class="section" id="ibn-yahya">
+<div class="chapter-label">Documentary Evidence</div>
+<h2 class="section-title">The Ibn Yaḥya Cognomen in Its Documentary Reality</h2>
+<p>The 1906 <em>Jewish Encyclopedia</em> entry "Yaḥya (Yaḥia), Ibn," by Joseph Jacobs and Schulim Ochser, opens with a headnote on the family's cognomens: "Certain individuals of the family bore the additional cognomen 'Negro,' with reference to the Moors, from whom several of their estates had been obtained." The entry's §1, on Yaḥya ibn Ya'ish, continues: "Flourished in Lisbon in the eleventh century; died about 1150. He was held in high esteem among the Jews, and King Alfonso I. honored him for his courage. After the conquest of Santarem the king presented him with two country houses that had belonged to the Moors, wherefore he assumed the name 'Negro.'"</p>
+<p>The headnote is analytically important, because the <em>Jewish Encyclopedia</em> itself — a work often cited as the source of the "conscription" intuition — in fact supports the parallel-polysemy reading this article advances. The cognomen is adopted because the estates had belonged to Moors: the underlying semantic move is from "Moorish lands" to "Negro lands" to "Negro of those lands." This is an onymization of a prior Portuguese geographic/cultural sense of <em>negro</em>, not an appropriation of any later ethnonymic meaning.</p>
+<p>The honest formulation is this: Yaḥya ibn Ya'ish is a communal figure remembered in later family tradition as close to the Portuguese crown, but whose specific offices are not documented in contemporary chancery sources. The cognomen <em>Negro</em> is attached to him — and to the branch of the family that descended from him — in onomastic tradition that runs from the twelfth through the sixteenth century. The cognomen's semantic motivation, as preserved in the JE's summary of that tradition, is the Moorish provenance of the estates he received after the 1147 fall of Santarém. This is a perfectly intelligible twelfth-century onymization. It is not evidence of any earlier racial meaning.</p>
+</div>
+
+<div class="section" id="portuguese-nation">
+<div class="chapter-label">After 1492</div>
+<h2 class="section-title">After 1492: The Portuguese Nation on the Atlantic</h2>
+<p>The Expulsion of 1492 from Castile and Aragon and the forced conversion of Portuguese Jewry in 1497 set in motion what Daviken Studnicki-Gizbert has called the Portuguese Nation — a dispersed commercial diaspora of New Christians (and, where Jewish practice remained possible, openly Jewish relatives and partners) whose networks spanned the Iberian peninsula, the Low Countries, Italy, North Africa, West Africa, and, in time, Brazil and the Spanish Indies. The Nation was a commercial rather than a religious category — a kinship-based trading community whose members moved as circumstances required across confessional lines.</p>
+<p>Samuel Usque's <em>Consolação às Tribulações de Israel</em> (Ferrara, 1553), in Diálogo III, records one of the diaspora's most harrowing episodes: the seizure by João II in 1493 of some 2,000 Jewish children, forcibly removed from their parents and deported to the newly established Portuguese colony of São Tomé off the West African coast. Within roughly a year, only about 600 of the original cohort remained alive; later evidence compiled by Robert Garfield suggests that by 1532, only some 50–60 of the original deportees were still living on the island. The São Tomé deportation is significant here not because it grounds a later racial claim — it does not — but because it marks the moment at which Iberian Jewish experience and the Atlantic African colonial system first intersect materially and demographically.</p>
+</div>
+
+<div class="section" id="creolization">
+<div class="chapter-label">Commercial Creolization</div>
+<h2 class="section-title">Creolization at the Rivers of Guinea: Lançados, Tangomãos, Nharas, Kassanké</h2>
+<p>The geography of the Portuguese Nation's West African presence is the coast from Cacheu south through Bugendo, the Casamance, the Gambia, Sierra Leone, and the Cabo Verde archipelago, together with the Petite Côte of Senegal — the Wolof-protected stretch running through Joal and Porto d'Ale (Portudal). George Brooks's <em>Eurafricans in Western Africa</em> (2003) established the foundational terms. <em>Lançados</em> — those who had "thrown themselves" (<em>lançar-se</em>) among African populations — and <em>tangomãos</em> were Portuguese and Cabo Verdean men, many of them New Christians, who settled in African coastal and riverine communities, adopted local languages and marriage alliances, and formed the human infrastructure of Portuguese-African commerce. Brooks, Toby Green, and David Wheat together re-described these men not as marginal deviants — the earlier historiography's reading — but as <strong>creolizing agents</strong>: producers of the Afro-Portuguese commercial and cultural world that was Atlantic Africa before the plantation complex fully engulfed it.</p>
+<p>The Nharas — Luso-African women traders, precursors of the nineteenth-century <em>signares</em> documented by Hilary Jones for Saint-Louis and Gorée — were the lynchpin of this commercial world. Philip Havik's <em>Silences and Soundbytes</em> (2004) shows that the Nharas were sovereign commercial actors: holders of property, contractors of marriages that were themselves trade instruments, brokers across Portuguese, Afro-Portuguese, and African-polity interests, and, in many cases, the dominant local figures with whom Nation merchants had to deal. To treat them as dependents or consorts is to miss the grammar of the system.</p>
+<p>The most analytically decisive point comes from Mark and Horta's <em>The Forgotten Diaspora</em> (2011): the openly Jewish and New Christian merchants of the Petite Côte <strong>participated marginally in the slave trade and fully in the blade-weapons trade</strong>. The structural-convergence thesis often assumed in popular accounts — that Nation merchants were slavers because they were on a slaving coast — fails at the level of the merchants' own account books. They traded iron, steel, and finished blades; they traded hides, ivory, wax, gum, amber; they extended credit; they did not, for the most part, traffic in captives.</p>
+</div>
+
+<div class="section" id="petite-cote">
+<div class="chapter-label">Case Study</div>
+<h2 class="section-title">The Petite Côte: Peregrino, Mesquita, Vaz de Sousa under Wolof Protection</h2>
+<p>The most fully documented Petite Côte community is the cluster of openly Jewish residents of Joal and Porto d'Ale in the first third of the seventeenth century, living under the protection of the Wolof (Jolof) crown. Jacob Peregrino, born in Tancos in 1562, moved from Lisbon to Venice, from Venice to Amsterdam, and from Amsterdam to the Petite Côte, where he served as the community's resident rabbinic authority in the 1610s and 1620s. He brought twelve Torah scrolls with him; he performed circumcisions; he maintained the liturgical life of a full Jewish community on a West African coast. His son Manuel was the community's <em>shochet</em> (ritual slaughterer). Moisés (Moses) de Mesquita, another Petite Côte resident, returned to Amsterdam and in 1647 was elected <em>parnas</em> of the Portuguese-Jewish community there.</p>
+<p>What made this community possible was not Portuguese toleration — Portugal had formally prohibited Jewish practice since 1497, and the Inquisition's arm reached into Cacheu and Cabo Verde — but <strong>Wolof sovereignty</strong>. The Wolof crown's protection of openly Jewish practitioners on its own coast is sovereign African statecraft: the court judged that the Nation merchants' commercial utility outweighed whatever pressure came from Lisbon, and it acted accordingly.</p>
+<blockquote>Tuck's desire-based framing is not incidental here. "Even when communities are broken and conquered," she writes, "they are so much more than that — so much more that this incomplete story is an act of aggression." The Petite Côte communities were neither broken nor conquered. They were living.</blockquote>
+</div>
+
+<div class="section" id="overlap">
+<div class="chapter-label">Structural Analysis</div>
+<h2 class="section-title">Structural Overlap without Demographic Coincidence</h2>
+<p>The argument of this article requires a precise distinction that earlier accounts have tended to blur. The Sephardic-commercial geography and the Upper Guinea slaving geography <strong>structurally overlap</strong>: they share coasts, rivers, ports, African polities, and, to a degree, Portuguese institutional infrastructure. They <strong>do not demographically coincide</strong>: the people who most fully inhabited the first were not the people who most fully drove the second.</p>
+<p>Wheat's <em>Atlantic Africa and the Spanish Caribbean</em> demonstrates that the slaving trade routed through Upper Guinea to the Caribbean in the decades before 1640 was operated through a layered network of Portuguese factors, tangomãos, Afro-Portuguese intermediaries, and African polities, with the captives drawn predominantly from inland and upriver conflicts in which Nation merchants themselves were not the primary actors.</p>
+<p>Jonathan Schorsch's <em>Jews and Blacks in the Early Modern World</em> (2004) provides the cautionary synthesis. Schorsch examined Sephardic attitudes and behavior toward Black Africans and Afro-descended people across Curaçao, Suriname, Brazil, and Jamaica, and concluded that those attitudes and behaviors "remained barely distinguishable from general European trends, less intense, although hardly benign." His Curaçao data — Jewish slave ownership at 27.4% in 1863 while Jews were 6.9% of the free population — captures the texture of a community that was over-represented in ownership relative to its size but whose slaveholding sat inside general European norms, not above them. Schorsch's finding is what the present article's synthesis requires: <strong>neither exemption nor prosecution</strong>.</p>
+</div>
+
+<div class="section" id="code-noir">
+<div class="chapter-label">1685</div>
+<h2 class="section-title">The 1685 Code Noir in Its Documentary Reality</h2>
+<p>Article 1 of Louis XIV's 1685 Code Noir ordered the expulsion of Jews from the French Antilles. It has sometimes been read as a bespoke severance — a "deliberate legal erasure" of Sephardic Atlantic presence precisely at the moment when that presence was becoming a commercial factor in the Caribbean. That reading does not survive Vernon Palmer's archival reconstruction of the Code's drafting.</p>
+<p>Palmer's "The Origins and Authors of the Code Noir," <em>Louisiana Law Review</em> 56:2 (February 1996): 363–407, shows on the basis of the drafting archive that the Code was drafted in the Antilles by Governor-General the Comte de Blénac and Intendant Jean-Baptiste Patoulet, working from local administrative practice rather than from a Romanist model. Article 1 itself states the source explicitly: "We desire and we expect that the Edict of 23 April 1615 of the late King, our most honored lord and father who remains glorious in our memory, be executed in our islands." The referenced 1615 edict is Louis XIII's re-promulgation of an earlier metropolitan expulsion of Jews; Article 1 of 1685 is therefore not an original racial-commercial calculation but a <strong>locally-expedient extension of a seventy-year-old metropolitan policy</strong> to the Antillean jurisdiction.</p>
+</div>
+
+<div class="section" id="conclusion">
+<div class="chapter-label">Conclusion</div>
+<h2 class="section-title">Conclusion</h2>
+<p>The synthesis this article has proposed is modest in its discoveries and ambitious in its reorganizations. It claims no new archive. It claims that the lexical coincidence of the two <em>negros</em> is best read as parallel semantic outputs of Latin <em>niger</em>, stabilizing independently in distinct discourse communities, and anchored for the Ibn Yaḥya line in a twelfth-century onymization of Moorish estates — exactly as the 1906 <em>Jewish Encyclopedia</em> itself reports, and exactly as the linguistics of polysemy would predict. It claims that the Sephardic and New Christian commercial diaspora on the Upper Guinea coast and the Petite Côte constituted a creolized Atlantic formation whose structural geography overlaps with, but does not demographically coincide with, the early Atlantic slaving complex.</p>
+<p>What remains, after the subtractions, is historically denser than what the subtractions removed. A commercial diaspora producing ritual life under African sovereignty on a West African coast; a slaving complex adjacent to but not operated by that diaspora; an African and Afro-Portuguese commercial class whose women were its most decisive figures; a Latin etymon that generated, by normal linguistic processes, two senses of the same word; an Antillean administrative order whose Jewish-expulsion clause was a derivative of a 1615 metropolitan edict rather than a bespoke severance. The Atlantic world these pieces describe is a world of overlap without coincidence, of proximity without identity, of shared etyma without shared meanings. That world is both harder to narrate and more honest than the alternatives.</p>
+<div class="dag-stamp">Word count (main text, excluding abstract, notes, and bibliography): approximately 6,300. Calibrated to the Atlantic Studies 7,000–10,000-word range (inclusive of notes and bibliography). Manuscript formatted for Editorial Manager submission. For double-anonymous peer review, the title page is to be supplied as a separate file; this document is the anonymized main file.</div>
+</div>
+
+
+<footer>
+  E5 Enclave Incorporated · EIN: 99-3822441 · Liberty City, Miami, Florida<br>
+  iamgodiam.net · CC0 1.0 Universal — Public Domain<br>
+  Calibrated to Atlantic Studies 7,000–10,000-word range
+</footer>
+
+
+    </article>
+  </div>
+</div>
+<script>
+// Reading progress bar
+window.addEventListener('scroll', function() {
+  var doc = document.documentElement;
+  var body = document.body;
+  var scrollTop = doc.scrollTop || body.scrollTop;
+  var scrollHeight = (doc.scrollHeight || body.scrollHeight) - doc.clientHeight;
+  var pct = scrollHeight > 0 ? (scrollTop / scrollHeight * 100).toFixed(1) : 0;
+  document.getElementById('dispatch-progress').style.width = pct + '%';
+});
+// Chapter outline from h2/h3
+(function() {
+  var headings = document.querySelectorAll('#article-body h2, #article-body h3');
+  var list = document.getElementById('chapter-list');
+  headings.forEach(function(h, i) {
+    if (!h.id) h.id = 'chapter-' + i;
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent.trim().substring(0, 42) + (h.textContent.length > 42 ? '…' : '');
+    a.style.cssText = 'font-size:11px;color:rgba(0,0,0,.5);text-decoration:none;line-height:1.5;display:block;padding:4px 0;border-left:2px solid transparent;padding-left:10px;transition:.2s;';
+    a.onmouseover = function() { this.style.color='var(--accent,#6d1f20)'; this.style.borderLeftColor='var(--accent,#6d1f20)'; };
+    a.onmouseout = function() { this.style.color='rgba(0,0,0,.5)'; this.style.borderLeftColor='transparent'; };
+    list.appendChild(a);
+  });
+})();
+// Citation copy
+function copyCite() {
+  var cite = 'E5 Enclave. (MMXXVI). Parallel Negros. E5 Enclave Incorporated. Retrieved from https://e5enclave.com/dispatches/';
+  navigator.clipboard.writeText(cite).then(function() {
+    var btn = document.getElementById('cite-btn');
+    btn.textContent = 'Copied!';
+    setTimeout(function(){ btn.textContent = 'Cite'; }, 2000);
+  });
+}
+// Mobile: hide apparatus on small screens
+if (window.innerWidth < 768) {
+  var app = document.getElementById('apparatus');
+  if (app) app.style.display = 'none';
+}
+</script>
+<section style="background:var(--bone-2,#ebe3d1);padding:64px 56px;border-top:1px solid rgba(0,0,0,.12);">
+  <div style="max-width:1280px;margin:0 auto;">
+    <p style="font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:var(--oxblood,#6d1f20);font-weight:600;margin:0 0 28px;">Read Also</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/a254b04ab_parallel-negros.html" style="border:1px solid rgba(0,0,0,.14);padding:28px;text-decoration:none;color:inherit;display:block;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--oxblood,#6d1f20)'" onmouseout="this.style.borderColor='rgba(0,0,0,.14)'">
+        <p style="font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--oxblood,#6d1f20);margin:0 0 8px;font-weight:600;">Think Tank Dispatch</p>
+        <p style="font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:400;margin:0 0 8px;">Parallel Negros</p>
+        <p style="font-size:13px;color:rgba(0,0,0,.5);margin:0;line-height:1.6;">The parallel architectures that shape the lineage's path through American history.</p>
+      </a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/2786ddd03_measure-the-wound.html" style="border:1px solid rgba(0,0,0,.14);padding:28px;text-decoration:none;color:inherit;display:block;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--oxblood,#6d1f20)'" onmouseout="this.style.borderColor='rgba(0,0,0,.14)'">
+        <p style="font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--oxblood,#6d1f20);margin:0 0 8px;font-weight:600;">Foundational Record</p>
+        <p style="font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:400;margin:0 0 8px;">Measure the Wound</p>
+        <p style="font-size:13px;color:rgba(0,0,0,.5);margin:0;line-height:1.6;">Documentation of the harms we repair. What is measured cannot be dismissed.</p>
+      </a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/7ad34832d_restitution-246.html" style="border:1px solid rgba(0,0,0,.14);padding:28px;text-decoration:none;color:inherit;display:block;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--oxblood,#6d1f20)'" onmouseout="this.style.borderColor='rgba(0,0,0,.14)'">
+        <p style="font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--oxblood,#6d1f20);margin:0 0 8px;font-weight:600;">Campaign Framework</p>
+        <p style="font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:400;margin:0 0 8px;">Restitution 246</p>
+        <p style="font-size:13px;color:rgba(0,0,0,.5);margin:0;line-height:1.6;">The Lloyd Kelly framework for the 246 years of stolen labor.</p>
+      </a>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-wordmark"><em>E5</em> ENCLAVE</div>
+      <p class="footer-tag">A lineage-led think tank comprised of a Coalition of the Willing.</p>
+      <p class="footer-sub">E5 Enclave Incorporated · 501(c)(3) Public Charity<br>EIN 99-3822441 · Liberty City, Miami, Florida · Founded MMXXIV</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <p class="footer-col-head">The Record</p>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/a254b04ab_parallel-negros.html">Parallel Negros</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/2786ddd03_measure-the-wound.html">Measure the Wound</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/7ad34832d_restitution-246.html">Restitution 246</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">Departments</p>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b5e0053a6_doctrine.html">Doctrine</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/0628dd8c3_pillars.html">The Five Pillars</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/0ef6b15c2_index.html">Dispatches Index</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">Programs</p>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/70ef36e95_environmental.html">Lineage Farms · FarmBlock</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/3bf0f3b9d_educational.html">McCartney Academy</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/fd5cdd7da_engagement.html">Block to the Boardroom</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">Coalition</p>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b8cbea39c_coalition.html">Members</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b8cbea39c_coalition.html#join">Apply</a>
+        <a href="mailto:info@e5enclave.com">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-base">
+    <span>© MMXXVI E5 Enclave Incorporated</span>
+    <span class="footer-orn">✦</span>
+    <span>Founded 2 June MMXXIV · Liberty City</span>
+    <span class="footer-orn">✦</span>
+    <span>For the next thousand years</span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Measure the Wound — Dispatch № II · E5 Enclave</title>
+<meta name="description" content="Documentation of the harms we repair. The evidentiary foundation of E5 Enclave.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/f697592b6_shared.css">
+<link rel="stylesheet" href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/88cc2d691_dispatch.css">
+</head>
+<body class="pal-wound">
+<div class="phase-strip">
+  <span class="phase-strip-l">Liberty City · Established MMXXIV</span>
+  <span class="phase-strip-c">✦</span>
+  <span class="phase-strip-r">Eden Launch · 17 February MMXXVII</span>
+</div>
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/68c708a1f_index.html" class="nav-wordmark"><span class="wm-e5"><em>E5</em></span><span class="wm-enc">ENCLAVE</span></a>
+    <div class="nav-links">
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b5e0053a6_doctrine.html">Doctrine</a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/0628dd8c3_pillars.html">Pillars</a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/0ef6b15c2_index.html">The Record</a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/e91962934_restitution.html">Restitution 246</a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b8cbea39c_coalition.html">Coalition</a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b8cbea39c_coalition.html#join" class="nav-cta">Join</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"
+      onclick="this.closest('.site-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.closest('.site-nav').classList.contains('open'))">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="dispatch-progress" style="position:fixed;top:46px;left:0;height:2px;background:var(--accent,#6d1f20);width:0%;z-index:200;transition:width .1s;"></div>
+<div style="display:flex;min-height:100vh;">
+  <!-- APPARATUS RAIL - sticky left -->
+  <aside id="apparatus" style="width:220px;flex-shrink:0;padding:40px 24px;border-right:1px solid rgba(0,0,0,.12);position:sticky;top:46px;height:calc(100vh - 46px);overflow-y:auto;display:flex;flex-direction:column;gap:16px;">
+    <p style="font-size:8px;letter-spacing:.45em;text-transform:uppercase;color:var(--oxblood,#6d1f20);font-weight:600;margin:0 0 4px;">Dispatch № II</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--ink,#0a0908);margin:0 0 20px;line-height:1.3;">Measure the Wound</p>
+    <div id="chapter-list" style="display:flex;flex-direction:column;gap:8px;flex:1;">
+      <!-- populated by JS -->
+    </div>
+    <div style="border-top:1px solid rgba(0,0,0,.12);padding-top:16px;margin-top:auto;">
+      <button onclick="window.print()" style="font-size:8px;letter-spacing:.4em;text-transform:uppercase;background:none;border:1px solid rgba(0,0,0,.2);padding:8px 12px;cursor:pointer;color:var(--ink,#0a0908);width:100%;font-family:'Inter',sans-serif;transition:.2s;" onmouseover="this.style.background='rgba(0,0,0,.06)'" onmouseout="this.style.background='none'">Print / Archive</button>
+      <button onclick="copyCite()" style="margin-top:8px;font-size:8px;letter-spacing:.4em;text-transform:uppercase;background:none;border:1px solid rgba(0,0,0,.2);padding:8px 12px;cursor:pointer;color:var(--ink,#0a0908);width:100%;font-family:'Inter',sans-serif;transition:.2s;" onmouseover="this.style.background='rgba(0,0,0,.06)'" onmouseout="this.style.background='none'" id="cite-btn">Cite</button>
+    </div>
+  </aside>
+  <!-- MAIN CONTENT -->
+  <div style="flex:1;min-width:0;">
+    <!-- PLATE / COVER -->
+    <header style="padding:80px 64px 60px;border-bottom:1.5px solid var(--ink,#0a0908);">
+      <p style="font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:var(--accent,#6d1f20);font-weight:600;margin:0 0 12px;">Foundational Record</p>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(56px,8vw,120px);letter-spacing:-.03em;line-height:.88;margin:0 0 24px;">Measure the Wound</h1>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,2vw,26px);color:rgba(0,0,0,.5);max-width:60ch;line-height:1.45;margin:0 0 32px;">Documentation of the harms we repair. What is measured cannot be dismissed — this is the evidentiary foundation against which every E5 program is built.</p>
+      <div style="display:flex;gap:32px;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(0,0,0,.4);">
+        <span>Israel Lee</span><span>·</span><span>E5 Enclave</span><span>·</span><span>MMXXVI</span>
+      </div>
+    </header>
+    <!-- ARTICLE BODY -->
+    <article style="padding:0 64px 80px;max-width:900px;" id="article-body">
+      
+
+<!-- ===================== MONUMENT ===================== -->
+<section class="monument">
+  <div class="top-rail">
+    <div class="left">E5 Enclave Inc. · Liberty City, Miami</div>
+    <div class="center">CC0 1.0 Universal — Public Domain</div>
+    <div class="right">April 22, 2026</div>
+  </div>
+
+  <div class="title-block">
+    <p style="font-family:var(--sans);font-size:12px;letter-spacing:0.36em;text-transform:uppercase;color:var(--accent);margin:0 0 28px;">Eight Pillars · 1,574 Verified Data Points · Revised Edition</p>
+    <h1>The Measure<br><span class="of">of the</span> <span class="wound">Wound</span></h1>
+    <p class="subtitle">An empirical record of Black American structural conditions, 1991–2024.</p>
+  </div>
+
+  <div class="credits">
+    <div>
+      <span class="lbl">By</span>
+      <strong>Israel Lee</strong> · Chairman, E5 Enclave Incorporated
+    </div>
+    <div>
+      <span class="lbl">Pillars</span>
+      <strong>8</strong>
+    </div>
+    <div>
+      <span class="lbl">Data points</span>
+      <strong>1,574</strong>
+    </div>
+    <div>
+      <span class="lbl">DAG</span>
+      <strong style="font-family:var(--mono);font-size:10px;letter-spacing:0.04em;">bdi-revised-complete-2026-0422</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TABLE OF CONTENTS ===================== -->
+<section class="toc">
+  <h2>Table of Contents</h2>
+  <div class="toc-list">
+    <a href="#preface"><span class="num">i.</span><span>Preface — Opening and Context</span><span class="meta">Liberty City</span></a>
+    <a href="#intro"><span class="num">ii.</span><span>Introduction — Methodology and Design</span><span class="meta">Eight Pillars</span></a>
+    <a href="#findings"><span class="num">iii.</span><span>Headline Findings</span><span class="meta">One per pillar</span></a>
+    <a href="#ch3"><span class="num">3.</span><span>The Wealth Gap</span><span class="meta">$240,120 absolute</span></a>
+    <a href="#ch4"><span class="num">4.</span><span>Health and the Weathering Body</span><span class="meta">2.61 ratio</span></a>
+    <a href="#ch5"><span class="num">5.</span><span>The Carceral State</span><span class="meta">6.3× floor</span></a>
+    <a href="#ch6"><span class="num">6.</span><span>The Education Debt</span><span class="meta">25-pt gap</span></a>
+    <a href="#ch7"><span class="num">7.</span><span>Housing and the Architecture of Exclusion</span><span class="meta">30.1 pts</span></a>
+    <a href="#ch8"><span class="num">8.</span><span>Political Participation and Its Limits</span><span class="meta">Shelby 2013</span></a>
+    <a href="#ch9"><span class="num">9.</span><span>Environmental Conditions and Food Access</span><span class="meta">Cancer Alley</span></a>
+    <a href="#conclusion"><span class="num">x.</span><span>Conclusion — What the Data Requires</span><span class="meta">Ledger</span></a>
+  </div>
+</section>
+
+<!-- ===================== PREFACE ===================== -->
+<section class="chapter-monument" id="preface">
+  <p class="chapter-num">i.</p>
+  <p class="chapter-kicker">Preface</p>
+  <h2 class="chapter-h">Opening and context</h2>
+
+  <div class="two-col">
+    <div class="prose-mono">
+      <p>We publish this paper in 2026 because the empirical record demands assembly.</p>
+      <p>The evidence base for the structural dispossession of Black Americans is large, well-documented, and distributed across dozens of federal agencies, academic journals, and investigative archives. The tools to access that evidence have never been more available. What did not previously exist is a single instrument that integrates the major dimensions of that record — economic, health, criminal justice, education, housing, political, environmental, and historical — into one open, verifiable, dual-sourced reference document. <em>This paper is an attempt to fill that specific gap.</em></p>
+      <p>We do not claim this is the first comprehensive empirical account of Black American life. The National Urban League has published the <em>State of Black America</em> annually since 1976, covering six of the eight dimensions represented here through its Equality Index. The Equal Justice Initiative, Eviction Lab, Sentencing Project, and EPA EJScreen each exceed this paper in depth within their individual domains.</p>
+      <p>What this paper attempts is different: a single CC0-licensed volume covering all eight dimensions, every quantitative claim independently verified against at least two primary government or peer-reviewed sources, available without fee or institutional affiliation, covering the post–Civil Rights Act window 1991–2024.</p>
+    </div>
+    <div class="prose-mono">
+      <p>We release this paper at a moment when the datasets it draws from are under pressure. Federal environmental justice mapping tools have been rescinded. Research programs that tracked racial disparities in health, wealth, and housing for decades face reduced funding. The analytical vocabulary of structural racism is being contested in public discourse at the same moment the disparities it describes are widening in several dimensions and holding in others. Against that backdrop, the record needs to be held in a form that cannot be defunded, rescinded, or withdrawn behind a paywall. <strong>CC0 licensing is the instrument for that form of holding.</strong></p>
+      <p>This paper is authored by E5 Enclave Incorporated, a Black-led nonprofit based in Liberty City, Miami. Liberty City is not incidental context. It is one of the communities whose structural position this paper documents — redlined in the 1930s, bisected by highway construction in the 1960s, the site of the 1980 rebellion following the acquittal of officers in the killing of Arthur McDuffie, and in 2026 still carrying compound deficits in housing, income, and food access that place it within the geography this paper maps.</p>
+    </div>
+  </div>
+
+  <div class="pquote">
+    The data is the record. The record is the evidence. The evidence is adequate to the claim.
+    <span class="src">— On method</span>
+  </div>
+
+  <div class="two-col">
+    <div class="prose-mono">
+      <p class="sub-h">On what this paper does and does not do</p>
+      <p>Eve Tuck's 2009 essay "Suspending Damage: A Letter to Communities" warns against research that pathologizes Black and Indigenous communities even when benevolently intended — research that centers wounds while leaving survivance, institution-building, and self-determination unregistered. <em>We take that warning seriously.</em> This paper measures structural harm. It does not measure — and cannot, within its chosen instruments — the creative, intellectual, organizing, and institution-building capacity of the communities it documents. That dark matter, in Bettina Love's phrase, is real, ongoing, and the reason the communities discussed here have survived conditions the paper describes.</p>
+    </div>
+    <div class="prose-mono">
+      <p class="sub-h">On tradition</p>
+      <p>The tradition this paper enters is long. Ida B. Wells counted the dead and published the names when no institution would. W.E.B. Du Bois applied social science methodology to Black American life when the academy held the question beneath serious attention. Ella Baker built organizing infrastructure that did not require a charismatic center because she understood that sovereign capacity cannot live in one person. James Baldwin refused the distance of academic prose because the subject was too consequential for comfort.</p>
+    </div>
+  </div>
+
+  <div class="witness">
+    <p class="lbl">Witness · Overtown, Miami</p>
+    <h3>Ralph McCartney</h3>
+    <p>And there is Ralph McCartney of Overtown, Miami — community organizer, oral historian, honored on the floor of the United States Congress by Congresswoman Carrie Meek for decades of service. In 1997, McCartney recorded his testimony about what the construction of I-95 and I-395 did to Overtown: a neighborhood where, he said, <em>"never did a hungry person cross that door and leave out that same way,"</em> where teachers and principals were <em>"like extended members of the family."</em></p>
+    <p>The expressways bisected that community into four disconnected fragments. The property was taken. The compensation was inadequate. The plans, McCartney noted, had been on the books for fifty years.</p>
+    <p style="font-family:var(--serif-display);font-style:italic;font-size:28px;line-height:1.3;color:var(--paper);max-width:30ch;">"They know everything there is to know about us. The only problem we have is what they decide to do with us."</p>
+    <p class="src">Testimony recorded 1997 · Primary source evidence</p>
+  </div>
+</section>
+
+<!-- ===================== INTRODUCTION ===================== -->
+<section class="chapter-monument alt" id="intro">
+  <p class="chapter-num">ii.</p>
+  <p class="chapter-kicker">Introduction</p>
+  <h2 class="chapter-h">Methodology and design</h2>
+
+  <div class="two-col">
+    <div class="prose-mono">
+      <p>What follows is an empirical record of structural conditions affecting Black Americans across eight dimensions of American life, built from federal, academic, and primary-source data across the period 1991 to 2024. It is not the only such record. It is a specific kind of record: <strong>CC0-licensed, Black-American-specific, integrating all eight dimensions in one volume, dual-source verified against at least two independent primary sources for every quantitative claim, and freely available to any user for any purpose.</strong></p>
+      <p>The closest comparator is the National Urban League's <em>State of Black America</em>, which has covered six of these eight dimensions through its Equality Index annually since 1976. The National Equity Atlas (PolicyLink/USC ERI) covers four to five overlapping dimensions through a multiracial rather than Black-specific lens. M4BL's "Vision for Black Lives" spans approximately seven dimensions thematically but is a policy platform rather than an empirical reference.</p>
+    </div>
+    <div class="prose-mono">
+      <p class="sub-h">Empirical window</p>
+      <p>1991–2024. This 33-year window begins after the dismantling of the explicit legal architecture of Jim Crow and encompasses the period during which the federal civil rights enforcement infrastructure has been nominally operative. <em>The persistence and, in several dimensions, widening of disparities inside this window cannot be attributed to de jure segregation</em> and must be attributed to the structural conditions that formal legal equality left undisturbed.</p>
+      <p class="sub-h">Dual-source verification</p>
+      <p>Every quantitative claim in this paper was confirmed against at least two independent primary sources before inclusion. Where sources disagreed on methodology, the methodological difference is noted and the source closer to the federal agency definition was used as the primary figure.</p>
+    </div>
+  </div>
+
+  <div class="sub-h" style="margin-top:80px;">The Eight Pillars</div>
+  <div class="pillar-grid">
+    <div class="pcell"><p class="pn">01.</p><p class="pl">Pillar 1</p><p class="pt">Economic</p><p class="ps">Wealth, unemployment, poverty, homeownership. SCF · BLS · ACS.</p></div>
+    <div class="pcell"><p class="pn">02.</p><p class="pl">Pillar 2</p><p class="pt">Health</p><p class="ps">Maternal mortality, life expectancy, environmental burden. CDC NVSS · EPA.</p></div>
+    <div class="pcell"><p class="pn">03.</p><p class="pl">Pillar 3</p><p class="pt">Criminal justice</p><p class="ps">Incarceration, lethal force, sentencing disparity. BJS · MPV · USSC.</p></div>
+    <div class="pcell"><p class="pn">04.</p><p class="pl">Pillar 4</p><p class="pt">Education</p><p class="ps">Achievement gaps, exclusionary discipline, pipeline. NAEP · OCR.</p></div>
+    <div class="pcell"><p class="pn">05.</p><p class="pl">Pillar 5</p><p class="pt">Housing</p><p class="ps">Homeownership, mortgage denial, eviction. HVS · HMDA · Eviction Lab.</p></div>
+    <div class="pcell"><p class="pn">06.</p><p class="pl">Pillar 6</p><p class="pt">Political</p><p class="ps">Voter participation; gaps between participation and outcome. CPS · OIG · GAO.</p></div>
+    <div class="pcell"><p class="pn">07.</p><p class="pl">Pillar 7</p><p class="pt">Environmental & food</p><p class="ps">Toxic burden, food access, sacrifice geographies. EJScreen · FARA · CDC PLACES.</p></div>
+    <div class="pcell"><p class="pn">08.</p><p class="pl">Pillar 8</p><p class="pt">Historical architecture</p><p class="ps">The causal record that precedes 1–7. Slave Voyages · NARA · HOLC · COINTELPRO.</p></div>
+  </div>
+</section>
+
+<!-- ===================== HEADLINE FINDINGS ===================== -->
+<section class="chapter-monument" id="findings">
+  <p class="chapter-num">iii.</p>
+  <p class="chapter-kicker">Headline findings</p>
+  <h2 class="chapter-h">One per pillar.</h2>
+
+  <div class="finding"><div class="fn">1.</div><div class="ft">Median Black family wealth in the SCF rose from <strong>~$12,000</strong> in 1989 to <strong>$44,890</strong> in 2022; median white family wealth rose from <strong>~$95,000</strong> to <strong>$285,000</strong>. The absolute gap grew from <strong>$83,000</strong> to <strong>$240,120</strong>. The poverty rate ratio has remained above <strong>1.9:1</strong> in every year of the dataset.</div></div>
+  <div class="finding"><div class="fn">2.</div><div class="ft">Black maternal mortality rate, 2021: <strong>69.9</strong> per 100,000 vs. white <strong>26.6</strong> — ratio <strong>2.63</strong>, pandemic peak. 2022: Black <strong>49.5</strong>, white <strong>19.0</strong>, ratio <strong>2.61</strong>.</div></div>
+  <div class="finding"><div class="fn">3.</div><div class="ft">Black Americans incarcerated at <strong>6.3×</strong> the rate of white Americans, 2022 (BJS). Ratio has not fallen below <strong>5.7</strong> in any year of the 33-year window.</div></div>
+  <div class="finding"><div class="fn">4.</div><div class="ft">NAEP 8th-grade reading gap: <strong>25 points</strong> in 2017, <strong>25 points</strong> in 2022. Long-run trend: modest narrowing with recent stagnation.</div></div>
+  <div class="finding"><div class="fn">5.</div><div class="ft">Black homeownership 2024: <strong>44.7%</strong> vs. white <strong>74.8%</strong> — a <strong>30.1-point</strong> gap, larger than when the Fair Housing Act was signed. HMDA: Black applicants denied at <strong>2.18×</strong> the white rate, 2022.</div></div>
+  <div class="finding"><div class="fn">6.</div><div class="ft">Black voter turnout exceeded white turnout in 2012 for the first time in recorded national history (<strong>66.6 vs. 64.1</strong>%). By 2022 the turnout gap had returned to <strong>7.9</strong> points.</div></div>
+  <div class="finding"><div class="fn">7.</div><div class="ft">EPA EJScreen v2.3: Black census tracts average substantially higher composite environmental burden percentiles than white tracts. In Cancer Alley, Louisiana, ~150 industrial facilities operate within an 85-mile corridor; the Reserve area of St. John the Baptist Parish is ~<strong>90%</strong> Black at the census tract level.</div></div>
+  <div class="finding"><div class="fn">8.</div><div class="ft">Historical coordinates spanning <strong>1619</strong> to the present — the transatlantic slave trade (12.5M embarked); Special Field Orders No. 15 (1865, ~400,000 acres, rescinded); HOLC redlining (1935–1940, 239 cities); COINTELPRO (1956–1971); the 100-to-1 crack/powder disparity (1986–2010) — establish the policy chain whose present-tense consequences pillars 1–7 document.</div></div>
+</section>
+
+<!-- ===================== CHAPTER 3 — WEALTH ===================== -->
+<section class="chapter-monument alt" id="ch3">
+  <p class="chapter-num">3.</p>
+  <p class="chapter-kicker">Chapter 3</p>
+  <h2 class="chapter-h">The Wealth Gap.</h2>
+
+  <div class="two-col">
+    <div class="prose-mono">
+      <p>In 1989, the median Black family in the Federal Reserve Survey of Consumer Finances held roughly <strong>$12,000</strong> in wealth. In 2022, the median Black family held <strong>$44,890</strong>. In the same period, median white family wealth rose from about <strong>$95,000</strong> to <strong>$285,000</strong>. The absolute gap grew from <strong>$83,000</strong> to <strong>$240,120</strong>.</p>
+      <p>Measured against median white wealth, Black family wealth moved from roughly <strong>12.6%</strong> in 1989 to <strong>15.8%</strong> in 2022 — a gain of about three cents on the white dollar across 33 years.</p>
+    </div>
+    <div class="prose-mono">
+      <p>These are median figures. Mean figures — which capture the tail wealth of the wealthiest households — tell a different story and should not be confused with medians. The Federal Reserve's SCF 2019 reported mean white family wealth at <strong>$983,400</strong> and mean Black family wealth at <strong>$142,500</strong>, while median Black wealth that same year was <strong>$24,100</strong>. The mean-to-median ratio within Black families alone in 2019 exceeded six to one, reflecting the concentration of Black wealth in a narrow upper segment.</p>
+    </div>
+  </div>
+
+  <div class="megastat">
+    <div class="num">$240,120<small>Absolute median wealth gap, 2022</small></div>
+    <div class="body">
+      The gap, measured in absolute median dollars, <em>nearly tripled</em> across 33 years.
+      Phase one: an oscillating expansion. Phase two: the 2008 crash, which by 2013 had pushed median Black wealth to <strong>$11,200</strong> — below its 1989 level. Phase three: a partial recovery to <strong>$24,100</strong> in 2019 and <strong>$44,890</strong> in 2022, leaving the ratio at approximately 0.16 of median white wealth.
+    </div>
+  </div>
+
+  <p class="sub-h">The unemployment constant</p>
+  <div class="chart">
+    <p class="ch-title">Black-to-white unemployment ratio, 1991–2024</p>
+    <p class="ch-sub">BLS · ratio has not dropped to parity in any year</p>
+    <svg viewBox="0 0 800 220" role="img" aria-label="Unemployment ratio chart">
+      <defs>
+        <pattern id="grid" width="80" height="44" patternUnits="userSpaceOnUse">
+          <path d="M 80 0 L 0 0 0 44" fill="none" stroke="rgba(14,16,20,0.08)" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="800" height="180" fill="url(#grid)" y="20"/>
+      <line x1="0" y1="20" x2="800" y2="20" stroke="#0e1014" stroke-width="1"/>
+      <line x1="0" y1="200" x2="800" y2="200" stroke="#0e1014" stroke-width="1"/>
+      <text x="0" y="14" font-family="Inter" font-size="10" fill="#5e616a" letter-spacing="2">RATIO</text>
+      <text x="780" y="14" font-family="Inter" font-size="10" fill="#5e616a" letter-spacing="2" text-anchor="end">PARITY = 1.0</text>
+      <line x1="0" y1="178" x2="800" y2="178" stroke="#6b1216" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="6" y="174" font-family="Inter" font-size="9" fill="#6b1216" letter-spacing="2">1.0</text>
+      <!-- Series: 1991, 2000-peak, 2007, 2010, 2019, 2020, 2022, 2024 -->
+      <!-- ratios: 2.05, 2.17, 2.0, 2.6, 1.85, 1.56, 1.7, 1.63 -->
+      <polyline fill="none" stroke="#6b1216" stroke-width="2.5" points="20,90 130,75 250,100 360,40 540,128 600,170 700,148 780,160"/>
+      <g font-family="Inter" font-size="10" fill="#0e1014">
+        <circle cx="20" cy="90" r="4" fill="#6b1216"/><text x="20" y="218" text-anchor="middle">1991</text><text x="20" y="80" text-anchor="middle" font-size="11" font-weight="600">2.05</text>
+        <circle cx="130" cy="75" r="4" fill="#6b1216"/><text x="130" y="218" text-anchor="middle">2000</text>
+        <circle cx="360" cy="40" r="4" fill="#6b1216"/><text x="360" y="218" text-anchor="middle">2010</text><text x="360" y="32" text-anchor="middle" font-size="11" font-weight="600">2.6</text>
+        <circle cx="540" cy="128" r="4" fill="#6b1216"/><text x="540" y="218" text-anchor="middle">2019</text>
+        <circle cx="600" cy="170" r="4" fill="#6b1216"/><text x="600" y="218" text-anchor="middle">2020</text>
+        <circle cx="780" cy="160" r="4" fill="#6b1216"/><text x="780" y="218" text-anchor="middle">2024</text><text x="780" y="150" text-anchor="end" font-size="11" font-weight="600">1.63</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="two-col">
+    <div class="prose-mono">
+      <p>In 1991: Black unemployment <strong>12.5%</strong>, white <strong>6.1%</strong> — ratio <strong>2.05</strong>. At the 2000s expansion peak: Black <strong>7.6</strong>, white <strong>3.5</strong>, ratio <strong>2.17</strong>. In the 2019 pre-pandemic low: Black <strong>6.1</strong>, white <strong>3.3</strong>, ratio <strong>1.85</strong> — the lowest recorded in the dataset but still a substantial structural gap.</p>
+      <p>The ratio has not dropped to parity. Across 33 years of expansions and contractions, the unemployment gap between Black and white Americans has <em>closed only at the margins and has reasserted itself at every downturn</em>.</p>
+    </div>
+    <div class="prose-mono">
+      <p class="sub-h">The homeownership architecture</p>
+      <p>The 2024 Black homeownership rate is <strong>44.7%</strong>; the white rate is <strong>74.8%</strong> — a <strong>30.1</strong> point gap. In 1994, when this series begins, the gap was <strong>27.7</strong> points. <em>It is larger today than when the data begins.</em></p>
+      <p>The mechanism is historical. Between 1935 and 1940, the Home Owners' Loan Corporation mapped 239 American cities and assigned their neighborhoods one of four grades. Grade D — red — coincided with the presence of Black residents. The maps were adopted by the FHA. The 1944 GI Bill provided returning veterans federally guaranteed mortgages. Black veterans were nominally eligible. In practice, the redlined maps meant they could not access the benefit in the neighborhoods where federal underwriters would insure a mortgage.</p>
+    </div>
+  </div>
+
+  <div class="witness">
+    <p class="lbl">Witness · Tulsa, Oklahoma</p>
+    <h3>Greenwood District, June 1, 1921</h3>
+    <p>By the early twentieth century Greenwood — Black Wall Street — had built more than 1,200 homes, 600 businesses, two newspapers, a hospital, a library, law offices, medical practices, and the accumulated wealth of a community that had built sovereign economic infrastructure in the face of every obstacle a segregated society placed in its path.</p>
+    <p>On the night of May 31 and the morning of June 1, 1921, a white mob descended on Greenwood. Private aircraft dropped incendiary devices on the community from above. In less than twenty-four hours, <strong>35 blocks</strong> were burned to the ground. Contemporary estimates place the dead at roughly <strong>300</strong> Black residents; <strong>10,000</strong> were left homeless. Property damage has been estimated at the equivalent of roughly <strong>$450 million</strong> in present-day value.</p>
+    <p>No one was convicted. No property claim was paid. Survivors rebuilt largely on their own. When urban renewal arrived in the 1960s, a highway bisected the rebuilt community.</p>
+    <p class="src">Oklahoma Commission to Study the Tulsa Race Riot of 1921 (2001)</p>
+  </div>
+
+  <div class="pquote">
+    The gap nearly tripled in absolute dollars. The data is the record.
+    <span class="src">— Closing line</span>
+  </div>
+
+  <div class="sources"><p class="lbl">Sources · Chapter 3</p>
+    Federal Reserve Survey of Consumer Finances (1989–2022); Federal Reserve Bulletin, Changes in U.S. Family Finances 2019–2022 (Oct 2023); Brookings Institution analysis of SCF 2022 (Moss, Nunn, Shambaugh 2023); BLS Local Area Unemployment Statistics (1991–2024); Census CPS (1991–2023); Census HVS (1994–2024); Mapping Inequality, University of Richmond; Aaronson, Hartley & Mazumder, AEJ:EP 13(4) (2021); Oklahoma Commission to Study the Tulsa Race Riot (2001); W.E.B. Du Bois, <em>The Philadelphia Negro</em> (1899). DAG: bdi-chapter3-wealth-v2-2026-0422.
+  </div>
+</section>
+
+<!-- ===================== CHAPTER 4 — HEALTH ===================== -->
+<section class="chapter-monument" id="ch4">
+  <p class="chapter-num">4.</p>
+  <p class="chapter-kicker">Chapter 4</p>
+  <h2 class="chapter-h">Health and the weathering body.</h2>
+
+  <div class="megastat">
+    <div class="num">2.61<small>Black-to-white maternal mortality ratio · 2022</small></div>
+    <div class="body">
+      In 2021, the maternal mortality rate for Black women in the United States reached <strong>69.9 per 100,000 live births</strong> — the pandemic-era peak. The white rate that year was <strong>26.6</strong>. In 2022, as acute pandemic conditions receded, the Black rate fell to <strong>49.5</strong> and white to <strong>19.0</strong>.
+      <em>The ratio has stayed in a narrow band centered around 2.5–2.8 across the post-2003 reporting regime even as absolute rates have oscillated.</em>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="prose-mono">
+      <p class="sub-h">The structural-racism framework</p>
+      <p>Camara Phyllis Jones distinguishes three levels of racism: institutionalized, personally mediated, and internalized. Institutionalized racism — her framework's deepest level — operates through differential access to the goods, services, and opportunities of society, codified in custom, practice, and law in ways that do not require individual intent.</p>
+      <p>Williams and Mohammed elaborate the pathways: residential segregation, occupational hazard exposure, chronic interpersonal discrimination, and differential policing each produce measurable physiological effects through stress-response pathways and cumulative allostatic load. Bailey et al. (Lancet, 2017) synthesize the evidence that structural racism is a foundational cause of U.S. racial health inequities.</p>
+    </div>
+    <div class="prose-mono">
+      <p>Nancy Krieger's ecosocial theory and Arline Geronimus's <em>weathering hypothesis</em> provide the biological mechanism. Weathering argues that chronic exposure to social, economic, and political adversity accelerates biological aging in ways measurable at the cellular level — shortened telomeres, elevated allostatic load, advanced epigenetic age relative to chronological age.</p>
+      <p>This is why the maternal mortality gap does not disappear when researchers control for education and income. <strong>A Black woman with a college degree and stable income still dies in childbirth at higher rates than a white woman without either.</strong> The structural residual after income and education are controlled is weathering.</p>
+    </div>
+  </div>
+
+  <div class="chart">
+    <p class="ch-title">Maternal mortality, 1991 → 2022</p>
+    <p class="ch-sub">CDC NCHS · per 100,000 live births · 2003 methodology break noted</p>
+    <svg viewBox="0 0 800 240" role="img">
+      <line x1="0" y1="220" x2="800" y2="220" stroke="#0e1014"/>
+      <line x1="0" y1="20" x2="800" y2="20" stroke="rgba(14,16,20,0.1)"/>
+      <line x1="280" y1="0" x2="280" y2="240" stroke="rgba(14,16,20,0.2)" stroke-dasharray="2,3"/>
+      <text x="284" y="14" font-family="Inter" font-size="9" fill="#5e616a" letter-spacing="2">2003 METHODOLOGY BREAK</text>
+      <!-- Black series -->
+      <polyline fill="none" stroke="#6b1216" stroke-width="2.5"
+        points="40,170 130,172 280,150 380,90 520,70 600,55 680,8 740,68"/>
+      <!-- White series -->
+      <polyline fill="none" stroke="#0e1014" stroke-width="2.5"
+        points="40,212 130,215 280,205 380,170 520,158 600,150 680,138 740,150"/>
+      <g font-family="Inter" font-size="10" fill="#5e616a" letter-spacing="1">
+        <text x="40" y="236" text-anchor="middle">1991</text>
+        <text x="280" y="236" text-anchor="middle">2003</text>
+        <text x="520" y="236" text-anchor="middle">2019</text>
+        <text x="680" y="236" text-anchor="middle">2021</text>
+        <text x="740" y="236" text-anchor="middle">2022</text>
+      </g>
+      <g font-family="Inter" font-size="10" fill="#0e1014">
+        <text x="744" y="68" font-weight="600" fill="#6b1216">49.5</text>
+        <text x="684" y="6" font-weight="600" fill="#6b1216">69.9 (peak)</text>
+        <text x="744" y="146" font-weight="600">19.0</text>
+      </g>
+      <g font-family="Inter" font-size="10" fill="#5e616a" letter-spacing="2">
+        <rect x="40" y="0" width="14" height="3" fill="#6b1216"/><text x="60" y="6">BLACK</text>
+        <rect x="120" y="0" width="14" height="3" fill="#0e1014"/><text x="140" y="6">WHITE</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="witness">
+    <p class="lbl">Tuskegee · 1932–1972</p>
+    <h3>Forty Years of Withheld Treatment</h3>
+    <p>On July 26, 1972, the Associated Press broke a story that the United States Public Health Service had, for 40 years, deliberately withheld treatment from <strong>399 Black men</strong> with syphilis in Macon County, Alabama, in order to observe the natural progression of the disease.</p>
+    <p>The men were told they were receiving treatment for "bad blood." They received placebos. When penicillin became the standard of care in 1947, the study continued. At least 28 died directly from syphilis; at least 100 died from related complications. <strong>40 wives</strong> were infected; <strong>19 children</strong> were born with congenital syphilis.</p>
+    <p>Tuskegee was not the work of a rogue faction. The study was federally funded, institutionally reviewed, and regularly renewed by the United States Public Health Service across four decades.</p>
+    <p class="src">U.S. Public Health Service · 1932–1972 · Federal record</p>
+  </div>
+
+  <div class="sources"><p class="lbl">Sources · Chapter 4</p>
+    CDC NCHS Maternal Mortality Rates (Hoyert 2023, 2024); CDC WONDER; Hoyert & Miniño NVSR 69:2 (2020); Jones, AJPH 90(8) (2000); Williams & Mohammed, ABS 57(8) (2013); Bailey et al., <em>The Lancet</em> 389 (2017); Krieger, IJE 30 (2001); Geronimus, Ethnicity & Disease 2(3) (1992); Hoffman et al., PNAS 113(16) (2016); Human Rights Watch, <em>We're Dying Here</em> (2024). DAG: bdi-chapter4-health-v2-2026-0422.
+  </div>
+</section>
+
+<!-- ===================== CHAPTER 5 — CARCERAL ===================== -->
+<section class="chapter-monument alt" id="ch5">
+  <p class="chapter-num">5.</p>
+  <p class="chapter-kicker">Chapter 5</p>
+  <h2 class="chapter-h">The carceral state.</h2>
+
+  <div class="megastat">
+    <div class="num">5.7<small>Floor of the 33-year ratio</small></div>
+    <div class="body">
+      There is no year in this dataset — 1991, 2000, 2010, 2022 — in which Black Americans were not incarcerated at <em>more than 5.7 times</em> the rate of white Americans. <strong>The ratio has not dropped below that floor across 33 years of federal data.</strong> A system producing random outcomes by race would produce oscillation. A system producing the same floor across 33 years is producing an institutional outcome.
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="prose-mono">
+      <p class="sub-h">The scholarship</p>
+      <p>Five books form the analytical frame: Michelle Alexander's <em>The New Jim Crow</em> (2010); Khalil Gibran Muhammad's <em>The Condemnation of Blackness</em> (2010); Ruth Wilson Gilmore's <em>Golden Gulag</em> (2007); Elizabeth Hinton's <em>From the War on Poverty to the War on Crime</em> (2016); James Forman Jr.'s <em>Locking Up Our Own</em> (2017, Pulitzer 2018).</p>
+      <p>Alexander names mass incarceration as a racialized system of social control that replaced — in function if not in form — the earlier legal architecture of Jim Crow. Hinton traces the federal policy chain that produced the architecture, with bipartisan accumulation continuous across Johnson, Nixon, Ford, Carter, Reagan, and Clinton, codified at peak intensity by the 1994 Violent Crime Control and Law Enforcement Act.</p>
+    </div>
+    <div class="prose-mono">
+      <p class="sub-h">The reform era and its limits</p>
+      <p>1991: Black rate ~<strong>2,678</strong> per 100,000; white ~<strong>326</strong>. Ratio <strong>8.2</strong>. 2000: Black <strong>3,457</strong>; white <strong>449</strong>. Ratio <strong>7.7</strong> — peak of mass incarceration.</p>
+      <p>The reform era — Fair Sentencing 2010, First Step 2018 — produced measurable but constrained movement. By 2022, Black rate <strong>1,775</strong>; white <strong>283</strong>. Ratio <strong>6.3</strong>. <strong>In 22 years of announced reform, the ratio moved 1.4 points.</strong> The floor remains above 5.7.</p>
+    </div>
+  </div>
+
+  <p class="sub-h">Police killing · 2013–2023</p>
+  <div class="two-col">
+    <div class="prose-mono">
+      <p>From 2013 to 2023, Mapping Police Violence data record approximately <strong>3,015</strong> Black Americans killed by police, with <strong>377</strong> classified as unarmed at the time of the killing. Over the 10-year period (87,672 hours), this is one killing every approximately <strong>29 hours</strong>.</p>
+      <p>The 2020–2021 period — the year of the George Floyd protests, the largest protest movement in American history — did not reduce the killing. MPV recorded <strong>312</strong> Black Americans killed by police in 2020 (40 unarmed) and <strong>300</strong> in 2021 (29 unarmed). <em>The number of unarmed Black Americans killed by police has not reached zero in any year.</em></p>
+    </div>
+    <div class="prose-mono">
+      <p class="sub-h">Baltimore, April 2015</p>
+      <p>On April 19, 2015, Freddie Gray, 25, died of a spinal cord injury sustained in Baltimore Police Department custody. He was arrested for possession of a legal knife, transported in a van without being secured by a seatbelt, and was dead within a week.</p>
+      <p>The conditions of Sandtown-Winchester at the time of Gray's death: Black male unemployment at 37 percent; Black homeownership declining since 2005; schools overwhelmingly Black and Latino and among the most underfunded in Maryland. The concentration of structural conditions did not produce Freddie Gray's death as a probabilistic event; it produced the geography within which the death occurred.</p>
+    </div>
+  </div>
+
+  <div class="pquote">
+    The floor is 5.7. It has been the floor for 33 years.<br>That is not reform failing. That is structure persisting through reform.
+    <span class="src">— Chapter 5</span>
+  </div>
+
+  <div class="sources"><p class="lbl">Sources · Chapter 5</p>
+    BJS Prisoners Series (1991–2022); Mapping Police Violence (2013–2023); FBI UCR (1991–2023); Census CPS; Alexander, <em>The New Jim Crow</em>; Muhammad, <em>The Condemnation of Blackness</em>; Gilmore, <em>Golden Gulag</em>; Hinton, <em>From the War on Poverty to the War on Crime</em>; Forman, <em>Locking Up Our Own</em>; Armour, <em>N*gga Theory</em>; Pub. L. 103-322; Pub. L. 111-220; Pub. L. 115-391; COPS evaluations; Brennan Center analyses. DAG: bdi-chapter5-carceral-v2-2026-0422.
+  </div>
+</section>
+
+<!-- ===================== CHAPTER 6 — EDUCATION ===================== -->
+<section class="chapter-monument" id="ch6">
+  <p class="chapter-num">6.</p>
+  <p class="chapter-kicker">Chapter 6</p>
+  <h2 class="chapter-h">The education debt.</h2>
+
+  <div class="two-col">
+    <div class="prose-mono">
+      <p>In 1992, the 8th-grade reading gap between Black and white students on the National Assessment of Educational Progress was approximately <strong>30 scale points</strong>. In 2017, it was <strong>25 points</strong>. In 2022, it was <strong>25 points</strong>.</p>
+      <p>The gap narrowed, on balance, across three decades of federal education reform — No Child Left Behind, Race to the Top, Common Core, Title I funding expansions — but the narrowing was modest and has stalled.</p>
+    </div>
+    <div class="prose-mono">
+      <p>At the average rate of narrowing across the available 30-year series, parity arrives <em>far beyond the lifetime of children currently in kindergarten</em>. That is the relevant structural fact.</p>
+      <p>Gloria Ladson-Billings named the correct term for what the NAEP series measures in her 2006 presidential address to the American Educational Research Association. <strong>It is not an achievement gap. It is an education debt.</strong></p>
+    </div>
+  </div>
+
+  <div class="megastat">
+    <div class="num">25 pts<small>NAEP 8th-grade reading gap · 2017 = 2022</small></div>
+    <div class="body">
+      Ladson-Billings's debt model: a historical debt, an economic debt, a sociopolitical debt, and a moral debt. <em>The NAEP gap measures the interest on the debt. It does not measure what Black children are capable of.</em>
+    </div>
+  </div>
+
+  <p class="sub-h">The mechanism · Exclusionary discipline</p>
+  <div class="bar-strip"><div class="lbl">Black student suspension rate, 2022</div><div class="barbed"><div class="b" style="width:74%"></div></div><div class="v">11.9%</div></div>
+  <div class="bar-strip"><div class="lbl">White student suspension rate, 2022</div><div class="barbed"><div class="b" style="width:26%"></div></div><div class="v">4.2%</div></div>
+  <div class="bar-strip"><div class="lbl">Suspension ratio · 2012 peak</div><div class="barbed"><div class="b" style="width:82%"></div></div><div class="v">3.28×</div></div>
+
+  <div class="two-col" style="margin-top:32px;">
+    <div class="prose-mono">
+      <p>The research on what suspension produces is unambiguous. Suspended students are more likely to be retained a grade, less likely to graduate on time, and more likely to enter the juvenile justice system. <em>The pipeline is not a metaphor. It is a measured pathway with transition probabilities documented at each stage.</em></p>
+      <p>Noguera's finding — that the racial gap in suspension is not explained by behavioral differences — is confirmed by experimental work (Okonofua and Eberhardt, 2015) showing that identical behaviors are perceived and coded differently when attributed to Black versus white students.</p>
+    </div>
+    <div class="prose-mono">
+      <p class="sub-h">Dark matter</p>
+      <p>Bettina Love's term — <em>dark matter</em> — names the intellectual, creative, and communal genius of Black children that exists entirely outside the test-score frame. NAEP does not measure it. Suspension rates do not measure it. Graduation data does not measure it.</p>
+      <p><strong>The Black children who attended the same underfunded schools this chapter measures, survived the same suspension pipelines it tracks, and produced the intellectual architecture the chapter sits on are the evidence that the NAEP gap measures the system, not the children.</strong></p>
+    </div>
+  </div>
+
+  <div class="pquote">
+    "I do not want my students to just survive. I want them to thrive — not despite their Blackness, but because of it."
+    <span class="src">— Bettina Love</span>
+  </div>
+
+  <div class="sources"><p class="lbl">Sources · Chapter 6</p>
+    NCES NAEP 8th-Grade Reading (1992–2024); NCES Indicator 10; OCR CRDC (2000–2022); Education Law Center funding analyses; Ladson-Billings, Educational Researcher 35(7) (2006); Emdin, <em>For White Folks Who Teach in the Hood</em> (2016); Love, <em>We Want to Do More Than Survive</em> (2019); Noguera, <em>The Trouble With Black Boys</em> (2008); Okonofua & Eberhardt, Psych Science 26(5) (2015). DAG: bdi-chapter6-education-v2-2026-0422.
+  </div>
+</section>
+
+<!-- ===================== CHAPTER 7 — HOUSING ===================== -->
+<section class="chapter-monument alt" id="ch7">
+  <p class="chapter-num">7.</p>
+  <p class="chapter-kicker">Chapter 7</p>
+  <h2 class="chapter-h">Housing and the architecture of exclusion.</h2>
+
+  <div class="megastat">
+    <div class="num">30.1 pts<small>Black–white homeownership gap · 2024</small></div>
+    <div class="body">
+      Black homeownership 2024: <strong>44.7%</strong>. White: <strong>74.8%</strong>. In 1994 the gap was <strong>27.3</strong> points. <em>It is larger today than when the data begins.</em>
+      Thirty years of the Fair Housing Act's enforcement infrastructure, the CRA, HMDA disclosure, the HOME program, the American Dream Downpayment Initiative — and the gap grew by nearly three percentage points.
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="prose-mono">
+      <p class="sub-h">The scholarship</p>
+      <p>Richard Rothstein's <em>The Color of Law</em> (2017) dismantles the persistent myth that American residential segregation was produced primarily by private choice. Rothstein documents segregation as <strong>explicit, coordinated policy of the federal government</strong> — through the FHA's appraisal methodology, public housing siting decisions, zoning ordinances, and racially restrictive covenants that federal agencies required as a condition of mortgage insurance.</p>
+      <p>Keeanga-Yamahtta Taylor's <em>Race for Profit</em> (2019) documents <strong>predatory inclusion</strong>: the post-1968 extension of homeownership opportunities to Black buyers in ways structurally designed to extract wealth rather than build it.</p>
+    </div>
+    <div class="prose-mono">
+      <p class="sub-h">The mortgage wall</p>
+      <p>1995: Black mortgage denial <strong>34.5%</strong>, white <strong>16.0%</strong> — ratio <strong>2.16</strong>. 2007 pre-crisis: Black <strong>20.4</strong>, white <strong>11.3</strong>, ratio <strong>1.81</strong>. 2022: Black <strong>18.1</strong>, white <strong>8.3</strong>, ratio <strong>2.18</strong>.</p>
+      <p>After 27 years of HMDA reporting and the fair-lending enforcement apparatus it enabled, Black applicants are still denied mortgages at <em>more than twice the white rate</em>. <strong>The wall did not move. It was repainted.</strong></p>
+      <p class="sub-h" style="margin-top:24px;">Eviction</p>
+      <p>2000: Black <strong>5.4</strong>, white <strong>1.8</strong>, ratio <strong>3.0</strong>. 2018: Black <strong>5.2</strong>, white <strong>1.7</strong>, ratio <strong>3.1</strong>. <em>Eighteen years. The ratio did not move by a meaningful increment.</em></p>
+    </div>
+  </div>
+
+  <div class="witness">
+    <p class="lbl">Witness · Overtown to Liberty City</p>
+    <h3>Miami, 1965–1970</h3>
+    <p>Overtown — originally Colored Town — was Miami's primary Black neighborhood from the city's founding in 1896. By the 1940s and 1950s it was a dense, economically active community: Black-owned businesses, hotels, performance venues, professional offices. Ella Fitzgerald performed there. Count Basie performed there.</p>
+    <p>Between 1965 and 1970, construction of Interstate 95 through Overtown destroyed approximately <strong>10,000 homes</strong> and displaced an estimated <strong>40,000 residents</strong>. The interchange was routed directly through the neighborhood. Federal highway planning documents from the period contain no evidence that alternative routes were given serious consideration.</p>
+    <p style="font-family:var(--serif-display);font-style:italic;font-size:24px;line-height:1.3;color:var(--paper);">"They know everything there is to know about us. The only problem we have is what they decide to do with us." — Ralph McCartney</p>
+    <p class="src">N.D.B. Connolly, <em>A World More Concrete</em> (Chicago, 2014)</p>
+  </div>
+
+  <div class="sources"><p class="lbl">Sources · Chapter 7</p>
+    Census HVS (1994–2024); CFPB HMDA Annual Reports (1995–2022); Princeton Eviction Lab (2000–2018); Aaronson, Hartley & Mazumder, AEJ:EP 13(4) (2021); Rothstein, <em>The Color of Law</em> (2017); Taylor, <em>Race for Profit</em> (2019); hooks, <em>Belonging</em> (2009); Connolly, <em>A World More Concrete</em> (2014); Desmond, <em>Evicted</em> (2016); FHA <em>Underwriting Manual</em> (1938); Mapping Inequality, U. Richmond DSL. DAG: bdi-chapter7-housing-v2-2026-0422.
+  </div>
+</section>
+
+<!-- ===================== CHAPTER 8 — POLITICAL ===================== -->
+<section class="chapter-monument" id="ch8">
+  <p class="chapter-num">8.</p>
+  <p class="chapter-kicker">Chapter 8</p>
+  <h2 class="chapter-h">Political participation and its limits.</h2>
+
+  <div class="megastat">
+    <div class="num">2012<small>The year Black turnout exceeded white turnout for the first time</small></div>
+    <div class="body">
+      <strong>66.6 vs. 64.1%.</strong> In the history of American voter participation, this is a remarkable data point. One year later, on June 25, 2013, the Supreme Court issued <em>Shelby County v. Holder</em>. The Court struck down Section 4(b) of the Voting Rights Act — the coverage formula that determined which jurisdictions required federal preclearance.
+      <em>The highest point in the dataset immediately preceded the most consequential retrenchment of voting-rights protection since the Reconstruction-era collapse. That is not coincidence. That is policy response.</em>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="prose-mono">
+      <p class="sub-h">The origin point · Southampton, 1831</p>
+      <p>On August 21, 1831, Nat Turner led the largest slave rebellion in the recorded history of the United States. The political response was legislative. Virginia, North Carolina, Georgia, and other Southern states passed laws within months prohibiting Black literacy, assembly, and unsupervised religious worship.</p>
+      <p>The template is the analytical point: <em>when Black organization reached a threshold of material power, legal architecture moved to contain it.</em></p>
+    </div>
+    <div class="prose-mono">
+      <p class="sub-h">The state's response · Hampton, Newton, Shakur</p>
+      <p>Fred Hampton, 21, Deputy Chairman of the Illinois chapter of the Black Panther Party, was killed in his Chicago apartment on December 4, 1969, by Chicago police working with FBI intelligence provided through COINTELPRO. Hampton had organized the Rainbow Coalition — a cross-racial political alliance between the Black Panthers, the Puerto Rican Young Lords, and the white Appalachian Young Patriots Organization.</p>
+      <p>The FBI classified the Black Panther Party as <em>"the greatest threat to the internal security of the country"</em> — J. Edgar Hoover's phrasing, in documents declassified through FOIA litigation in the 1970s.</p>
+    </div>
+  </div>
+
+  <div class="witness">
+    <p class="lbl">Witness · Atlantic City, August 22, 1964</p>
+    <h3>Fannie Lou Hamer</h3>
+    <p>Fannie Lou Hamer — sharecropper from Sunflower County, Mississippi, evicted from her plantation for attempting to register to vote, shot at by her landlord, beaten by Mississippi police in custody — appeared before the Credentials Committee of the Democratic National Convention in Atlantic City to testify on behalf of the Mississippi Freedom Democratic Party.</p>
+    <p style="font-family:var(--serif-display);font-style:italic;font-size:28px;line-height:1.3;color:var(--paper);max-width:32ch;">"I question America. Is this America, the land of the free and the home of the brave, where we have to sleep with our telephones off the hooks because our lives be threatened daily?"</p>
+    <p>President Lyndon B. Johnson, monitoring the convention, called an emergency press conference at the White House to pull the three major television networks away from Hamer's testimony live. He succeeded. The networks cut away. <strong>The MFDP was denied its seats. The testimony aired in full that evening, after the news cycle had moved.</strong></p>
+    <p class="src">DNC Credentials Committee · August 22, 1964</p>
+  </div>
+
+  <div class="two-col">
+    <div class="prose-mono">
+      <p class="sub-h">The duopoly's record</p>
+      <p>The 1994 Violent Crime Control and Law Enforcement Act, authored by then-Senator Joseph Biden of Delaware and signed into law by President Bill Clinton, allocated <strong>$9.7 billion</strong> in VOI/TIS prison grants, expanded mandatory minimums, created the federal three-strikes provision, and authorized funding for additional police officers through the COPS program. The statute passed with broad bipartisan support. <em>Its effects concentrated in communities whose voters had helped elect those Democrats.</em></p>
+    </div>
+    <div class="prose-mono">
+      <p class="sub-h">Crenshaw and intersectionality</p>
+      <p>Kimberlé Crenshaw has documented that Black women constitute <strong>the most reliable and highest-turnout constituency in the American electorate while receiving the smallest aggregate policy return</strong> of any demographic group that votes consistently for either party. Black women turned out at the highest rates of any demographic group in 2020. Maternal mortality, incarceration, school funding, and housing architecture in the communities where they live did not fundamentally change under the administration that electoral mobilization produced.</p>
+    </div>
+  </div>
+
+  <div class="pquote">
+    Black votes are cast; the material outcomes they produce are intercepted at each institutional threshold where they would become economically consequential.
+    <span class="src">— Chapter 8</span>
+  </div>
+
+  <div class="sources"><p class="lbl">Sources · Chapter 8</p>
+    Census CPS Voting & Registration Supplement (1992–2022); <em>Shelby County v. Holder</em>, 570 U.S. 529 (2013); Pub. L. 103-322; 24 CFR Part 75; HUD OIG and GAO audits on Section 3; Marable, <em>Race, Reform, and Rebellion</em>; Malcolm X, "Ballot or the Bullet" (1964); Baker, "Bigger Than a Hamburger" (1960); Crenshaw, Stanford Law Rev. (1991); Carmichael & Hamilton, <em>Black Power</em>; Shakur, <em>Assata</em>; King, <em>Why We Can't Wait</em>; Hamer DNC testimony (1964); Churchill & Vander Wall, <em>The COINTELPRO Papers</em>; Haas, <em>The Assassination of Fred Hampton</em>; Newton, <em>To Die for the People</em>. DAG: bdi-chapter8-political-v2-2026-0422.
+  </div>
+</section>
+
+<!-- ===================== CHAPTER 9 — ENVIRONMENTAL ===================== -->
+<section class="chapter-monument alt" id="ch9">
+  <p class="chapter-num">9.</p>
+  <p class="chapter-kicker">Chapter 9</p>
+  <h2 class="chapter-h">Environmental conditions and food access.</h2>
+
+  <div class="two-col">
+    <div class="prose-mono">
+      <p>The land beneath Black communities in America is not neutral. The air above them is not shared equally. The water running through their pipes has been the subject of documented government negligence in city after city across decades. The food infrastructure within walking distance has been systematically withdrawn by a commercial sector that made calculations about which neighborhoods were worth serving.</p>
+      <p>This chapter documents what environmental racism produces in measurable units: pollution burden, blood-lead prevalence by subgroup, Superfund proximity, drinking water violations, farmland loss across a century. <em>These are coordinates, not complaints.</em></p>
+    </div>
+    <div class="prose-mono">
+      <p class="sub-h">Analytical framework</p>
+      <p>Robert Bullard, founder of the environmental justice movement as an empirical discipline, surveyed Black communities in Houston, Dallas, Atlanta, Alsen, and Emelle and established that siting of municipal landfills, hazardous waste facilities, and industrial operations followed racial geography with a consistency that could not be explained by land price, zoning history, or any variable other than race.</p>
+      <p>Beverly Wright, Mustafa Ali, and Wangari Maathai extend the empirical and political frame: from the Petite Côte to the Niger Delta, the destruction of land and the destruction of people are not separate events when the people are of African descent.</p>
+    </div>
+  </div>
+
+  <div class="megastat">
+    <div class="num">~150<small>Industrial facilities · Cancer Alley, Louisiana</small></div>
+    <div class="body">
+      The 85-mile corridor of the Mississippi River between Baton Rouge and New Orleans contains roughly 150 industrial facilities. The specific census tract adjacent to the Denka Performance Elastomer plant in Reserve is approximately <strong>90% Black</strong>. EPA EJScreen data place Reserve area census tracts in the <strong>95th to 99th percentile</strong> for cancer risk from air toxics nationwide.
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="prose-mono">
+      <p class="sub-h">The land · Black farmer dispossession</p>
+      <p>In 1920, Black farmers operated <strong>925,000 farms</strong> and held approximately <strong>16 to 19 million acres</strong> of farmland under titled ownership. By 2017, Black farmers operated approximately <strong>45,500 farms</strong> and held approximately <strong>4.7 million acres</strong>.</p>
+      <p>A 2022 Reuters investigation, drawing on the research of Dania Francis, Darrick Hamilton, Thomas Mitchell, and Bryce Stucki, estimated the present value of lost Black agricultural land at approximately <strong>$326 billion</strong>.</p>
+    </div>
+    <div class="prose-mono">
+      <p class="sub-h">Flint, 2014</p>
+      <p>In 2014, a state-appointed emergency manager switched the city's drinking water supply to the Flint River without implementing required corrosion controls, leaching lead from aging pipes into the distribution system. Flint's Black population in the 2010–2014 vintage was approximately <strong>57%</strong>.</p>
+      <p><strong>Flint is not an anomaly. It is the most visible recent instance of the pattern Bullard documented in 1990.</strong></p>
+    </div>
+  </div>
+
+  <div class="witness">
+    <p class="lbl">Cancer Alley · Organizing</p>
+    <h3>Before the metrics, the organizers</h3>
+    <p>Concerned Citizens of St. John, founded by Robert Taylor in 2016 to confront the Denka-Performance Elastomer plant emissions in Reserve. RISE St. James, founded by Sharon Lavigne in 2018, which led the community coalition that blocked the proposed Formosa Plastics Sunshine Project in St. James Parish's 5th District. Inclusive Louisiana. The Descendants Project, founded by Jo and Joy Banner.</p>
+    <p>The named leadership of these formations has led multi-year environmental justice campaigns, community-based air monitoring, legal intervention, and federal advocacy. <em>Their work is part of the record this chapter documents.</em></p>
+    <p class="src">Human Rights Watch, <em>We're Dying Here</em> (2024) · Deep South Center for Environmental Justice</p>
+  </div>
+
+  <div class="sources"><p class="lbl">Sources · Chapter 9</p>
+    EPA EJScreen v2.3 (archived; Public Environmental Data Partners, Social Explorer); USDA ERS FARA; CDC PLACES; Mikati et al., AJPH 108(4) (2018); Tessum et al., PNAS 116(13) (2019); UCC Commission for Racial Justice, <em>Toxic Wastes and Race</em> (1987, 2007); CDC NHANES & MMWR 46(7) (1997); USDA Census of Agriculture; Francis, Hamilton, Mitchell, Stucki et al. (AEA P&P, 2022); <em>Pigford v. Glickman</em>, 185 F.R.D. 82 (D.D.C. 1999); Bullard, <em>Dumping in Dixie</em> (1990); HRW <em>We're Dying Here</em> (2024); Maathai, <em>Unbowed</em> (2006). DAG: bdi-chapter9-environmental-v2-2026-0422.
+  </div>
+</section>
+
+<!-- ===================== CONCLUSION ===================== -->
+<section class="chapter-monument" id="conclusion">
+  <p class="chapter-num">x.</p>
+  <p class="chapter-kicker">Conclusion</p>
+  <h2 class="chapter-h">What the data requires.</h2>
+
+  <div class="two-col">
+    <div class="prose-mono">
+      <p>The wealth gap nearly tripled in absolute dollars across 33 years. The maternal mortality ratio has not converged. The carceral floor is 5.7×. The education debt persists at 25 points. The homeownership gap is wider in 2024 than it was in 1994. The voting infrastructure that produced the 2012 turnout peak was struck down within thirteen months. The environmental sacrifice geographies that Bullard mapped in 1990 are still mapped today, with the names of organizers attached.</p>
+    </div>
+    <div class="prose-mono">
+      <p>This paper measures the wound. <em>It does not measure what the communities the wound was inflicted on have built and continue to build.</em> Both records are kept. The communities have been keeping their own records all along, often in the face of the same institutions whose data this paper draws on.</p>
+      <p><strong>The data is the record. The record is the evidence. The evidence is adequate to the claim.</strong></p>
+    </div>
+  </div>
+
+  <div class="pquote">
+    The body is the record the structure keeps.
+    <span class="src">— Closing line</span>
+  </div>
+</section>
+
+<!-- ===================== COLOPHON ===================== -->
+<footer class="colofoot">
+  <div class="grid">
+    <div>
+      <h4>E5 Enclave</h4>
+      <p>Liberty City, Miami, Florida</p>
+      <p>EIN · 99-3822441</p>
+      <p>e5enclave.com</p>
+    </div>
+    <div>
+      <h4>This Document</h4>
+      <p>The Measure of the Wound</p>
+      <p>by Israel Lee, Chairman</p>
+      <p>April 22, 2026 · Revised Edition</p>
+    </div>
+    <div>
+      <h4>License</h4>
+      <p>CC0 1.0 Universal — Public Domain</p>
+      <p>1,574 verified data points · dual-source.</p>
+    </div>
+    <div>
+      <h4>DAG</h4>
+      <p style="font-family:var(--mono);font-size:11px;">bdi-revised-complete-2026-0422</p>
+    </div>
+  </div>
+</footer>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+const { useTweaks, TweaksPanel, TweakSection, TweakRadio } = window;
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "monumental": "roman",
+  "rule": "shown"
+}/*EDITMODE-END*/;
+function Tweaks() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  React.useEffect(() => {
+    const headlines = document.querySelectorAll('.chapter-h, .monument h1');
+    headlines.forEach(h => {
+      h.style.fontStyle = t.monumental === 'italic' ? 'italic' : 'normal';
+      h.style.fontWeight = t.monumental === 'italic' ? '500' : '600';
+    });
+  }, [t]);
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakSection title="Monumental Type">
+        <TweakRadio label="Style" value={t.monumental} onChange={v => setTweak('monumental', v)}
+          options={[{value:'italic',label:'Italic'},{value:'roman',label:'Roman'}]} />
+      </TweakSection>
+    </TweaksPanel>
+  );
+}
+const root = document.createElement('div');
+document.body.appendChild(root);
+ReactDOM.createRoot(root).render(<Tweaks />);
+</script>
+
+<script>
+// Count-up animation for megastat numbers
+const cu = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('seen');
+    cu.unobserve(e.target);
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('.megastat .num, .chapter-num').forEach(el => cu.observe(el));
+</script>
+
+<style>
+.megastat .num, .chapter-num { transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); opacity: 0; transform: translateY(20px); }
+.megastat .num.seen, .chapter-num.seen { opacity: 1; transform: translateY(0); }
+</style>
+
+
+    </article>
+  </div>
+</div>
+<script>
+// Reading progress bar
+window.addEventListener('scroll', function() {
+  var doc = document.documentElement;
+  var body = document.body;
+  var scrollTop = doc.scrollTop || body.scrollTop;
+  var scrollHeight = (doc.scrollHeight || body.scrollHeight) - doc.clientHeight;
+  var pct = scrollHeight > 0 ? (scrollTop / scrollHeight * 100).toFixed(1) : 0;
+  document.getElementById('dispatch-progress').style.width = pct + '%';
+});
+// Chapter outline from h2/h3
+(function() {
+  var headings = document.querySelectorAll('#article-body h2, #article-body h3');
+  var list = document.getElementById('chapter-list');
+  headings.forEach(function(h, i) {
+    if (!h.id) h.id = 'chapter-' + i;
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent.trim().substring(0, 42) + (h.textContent.length > 42 ? '…' : '');
+    a.style.cssText = 'font-size:11px;color:rgba(0,0,0,.5);text-decoration:none;line-height:1.5;display:block;padding:4px 0;border-left:2px solid transparent;padding-left:10px;transition:.2s;';
+    a.onmouseover = function() { this.style.color='var(--accent,#6d1f20)'; this.style.borderLeftColor='var(--accent,#6d1f20)'; };
+    a.onmouseout = function() { this.style.color='rgba(0,0,0,.5)'; this.style.borderLeftColor='transparent'; };
+    list.appendChild(a);
+  });
+})();
+// Citation copy
+function copyCite() {
+  var cite = 'E5 Enclave. (MMXXVI). Measure the Wound. E5 Enclave Incorporated. Retrieved from https://e5enclave.com/dispatches/';
+  navigator.clipboard.writeText(cite).then(function() {
+    var btn = document.getElementById('cite-btn');
+    btn.textContent = 'Copied!';
+    setTimeout(function(){ btn.textContent = 'Cite'; }, 2000);
+  });
+}
+// Mobile: hide apparatus on small screens
+if (window.innerWidth < 768) {
+  var app = document.getElementById('apparatus');
+  if (app) app.style.display = 'none';
+}
+</script>
+<section style="background:var(--bone-2,#ebe3d1);padding:64px 56px;border-top:1px solid rgba(0,0,0,.12);">
+  <div style="max-width:1280px;margin:0 auto;">
+    <p style="font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:var(--oxblood,#6d1f20);font-weight:600;margin:0 0 28px;">Read Also</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/a254b04ab_parallel-negros.html" style="border:1px solid rgba(0,0,0,.14);padding:28px;text-decoration:none;color:inherit;display:block;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--oxblood,#6d1f20)'" onmouseout="this.style.borderColor='rgba(0,0,0,.14)'">
+        <p style="font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--oxblood,#6d1f20);margin:0 0 8px;font-weight:600;">Think Tank Dispatch</p>
+        <p style="font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:400;margin:0 0 8px;">Parallel Negros</p>
+        <p style="font-size:13px;color:rgba(0,0,0,.5);margin:0;line-height:1.6;">The parallel architectures that shape the lineage's path through American history.</p>
+      </a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/2786ddd03_measure-the-wound.html" style="border:1px solid rgba(0,0,0,.14);padding:28px;text-decoration:none;color:inherit;display:block;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--oxblood,#6d1f20)'" onmouseout="this.style.borderColor='rgba(0,0,0,.14)'">
+        <p style="font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--oxblood,#6d1f20);margin:0 0 8px;font-weight:600;">Foundational Record</p>
+        <p style="font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:400;margin:0 0 8px;">Measure the Wound</p>
+        <p style="font-size:13px;color:rgba(0,0,0,.5);margin:0;line-height:1.6;">Documentation of the harms we repair. What is measured cannot be dismissed.</p>
+      </a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/7ad34832d_restitution-246.html" style="border:1px solid rgba(0,0,0,.14);padding:28px;text-decoration:none;color:inherit;display:block;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--oxblood,#6d1f20)'" onmouseout="this.style.borderColor='rgba(0,0,0,.14)'">
+        <p style="font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--oxblood,#6d1f20);margin:0 0 8px;font-weight:600;">Campaign Framework</p>
+        <p style="font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:400;margin:0 0 8px;">Restitution 246</p>
+        <p style="font-size:13px;color:rgba(0,0,0,.5);margin:0;line-height:1.6;">The Lloyd Kelly framework for the 246 years of stolen labor.</p>
+      </a>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-wordmark"><em>E5</em> ENCLAVE</div>
+      <p class="footer-tag">A lineage-led think tank comprised of a Coalition of the Willing.</p>
+      <p class="footer-sub">E5 Enclave Incorporated · 501(c)(3) Public Charity<br>EIN 99-3822441 · Liberty City, Miami, Florida · Founded MMXXIV</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <p class="footer-col-head">The Record</p>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/a254b04ab_parallel-negros.html">Parallel Negros</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/2786ddd03_measure-the-wound.html">Measure the Wound</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/7ad34832d_restitution-246.html">Restitution 246</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">Departments</p>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b5e0053a6_doctrine.html">Doctrine</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/0628dd8c3_pillars.html">The Five Pillars</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/0ef6b15c2_index.html">Dispatches Index</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">Programs</p>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/70ef36e95_environmental.html">Lineage Farms · FarmBlock</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/3bf0f3b9d_educational.html">McCartney Academy</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/fd5cdd7da_engagement.html">Block to the Boardroom</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">Coalition</p>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b8cbea39c_coalition.html">Members</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b8cbea39c_coalition.html#join">Apply</a>
+        <a href="mailto:info@e5enclave.com">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-base">
+    <span>© MMXXVI E5 Enclave Incorporated</span>
+    <span class="footer-orn">✦</span>
+    <span>Founded 2 June MMXXIV · Liberty City</span>
+    <span class="footer-orn">✦</span>
+    <span>For the next thousand years</span>
+  </div>
+</footer>
+</body>
+</html>

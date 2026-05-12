@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restitution 246 — Dispatch № III · E5 Enclave</title>
+<meta name="description" content="The Lloyd Kelly reparations framework. Five questions. Sequential, not rhetorical.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/f697592b6_shared.css">
+<link rel="stylesheet" href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/88cc2d691_dispatch.css">
+</head>
+<body class="pal-restitution">
+<div class="phase-strip">
+  <span class="phase-strip-l">Liberty City · Established MMXXIV</span>
+  <span class="phase-strip-c">✦</span>
+  <span class="phase-strip-r">Eden Launch · 17 February MMXXVII</span>
+</div>
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/68c708a1f_index.html" class="nav-wordmark"><span class="wm-e5"><em>E5</em></span><span class="wm-enc">ENCLAVE</span></a>
+    <div class="nav-links">
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b5e0053a6_doctrine.html">Doctrine</a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/0628dd8c3_pillars.html">Pillars</a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/0ef6b15c2_index.html">The Record</a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/e91962934_restitution.html">Restitution 246</a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b8cbea39c_coalition.html">Coalition</a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b8cbea39c_coalition.html#join" class="nav-cta">Join</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false"
+      onclick="this.closest('.site-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.closest('.site-nav').classList.contains('open'))">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="dispatch-progress" style="position:fixed;top:46px;left:0;height:2px;background:var(--accent,#6d1f20);width:0%;z-index:200;transition:width .1s;"></div>
+<div style="display:flex;min-height:100vh;">
+  <!-- APPARATUS RAIL - sticky left -->
+  <aside id="apparatus" style="width:220px;flex-shrink:0;padding:40px 24px;border-right:1px solid rgba(0,0,0,.12);position:sticky;top:46px;height:calc(100vh - 46px);overflow-y:auto;display:flex;flex-direction:column;gap:16px;">
+    <p style="font-size:8px;letter-spacing:.45em;text-transform:uppercase;color:var(--oxblood,#6d1f20);font-weight:600;margin:0 0 4px;">Dispatch № III</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--ink,#0a0908);margin:0 0 20px;line-height:1.3;">Restitution 246</p>
+    <div id="chapter-list" style="display:flex;flex-direction:column;gap:8px;flex:1;">
+      <!-- populated by JS -->
+    </div>
+    <div style="border-top:1px solid rgba(0,0,0,.12);padding-top:16px;margin-top:auto;">
+      <button onclick="window.print()" style="font-size:8px;letter-spacing:.4em;text-transform:uppercase;background:none;border:1px solid rgba(0,0,0,.2);padding:8px 12px;cursor:pointer;color:var(--ink,#0a0908);width:100%;font-family:'Inter',sans-serif;transition:.2s;" onmouseover="this.style.background='rgba(0,0,0,.06)'" onmouseout="this.style.background='none'">Print / Archive</button>
+      <button onclick="copyCite()" style="margin-top:8px;font-size:8px;letter-spacing:.4em;text-transform:uppercase;background:none;border:1px solid rgba(0,0,0,.2);padding:8px 12px;cursor:pointer;color:var(--ink,#0a0908);width:100%;font-family:'Inter',sans-serif;transition:.2s;" onmouseover="this.style.background='rgba(0,0,0,.06)'" onmouseout="this.style.background='none'" id="cite-btn">Cite</button>
+    </div>
+  </aside>
+  <!-- MAIN CONTENT -->
+  <div style="flex:1;min-width:0;">
+    <!-- PLATE / COVER -->
+    <header style="padding:80px 64px 60px;border-bottom:1.5px solid var(--ink,#0a0908);">
+      <p style="font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:var(--accent,#6d1f20);font-weight:600;margin:0 0 12px;">Campaign Framework</p>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(56px,8vw,120px);letter-spacing:-.03em;line-height:.88;margin:0 0 24px;">Restitution 246</h1>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,2vw,26px);color:rgba(0,0,0,.5);max-width:60ch;line-height:1.45;margin:0 0 32px;">A disciplined wage-loss and opportunity-loss framework for the 246 years of stolen labor — built on the five questions, anchored to the Craemer (2015) wage-hour methodology.</p>
+      <div style="display:flex;gap:32px;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(0,0,0,.4);">
+        <span>Lloyd Kelly</span><span>·</span><span>E5 Enclave</span><span>·</span><span>MMXXVI</span>
+      </div>
+    </header>
+    <!-- ARTICLE BODY -->
+    <article style="padding:0 64px 80px;max-width:900px;" id="article-body">
+      
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="row">
+    <div class="left">Vol. I · Issue 02</div>
+    <div class="center">E5 Enclave</div>
+    <div class="right">
+      <a href="#framework">Framework</a>
+      <a href="#appendix">Appendix</a>
+      <a href="#" onclick="window.print();return false;">Print</a>
+    </div>
+  </div>
+</header>
+
+<!-- COVER PLATE -->
+<section class="plate">
+  <div class="kicker"><span>The Restitution Series · No. 246</span></div>
+  <h1>Reparations.<br>Restoration.<br><em>Restitution.</em></h1>
+  <p class="deck">A framework in five questions — sequential, not rhetorical. If you accept the first, the rest follow.</p>
+  <dl class="colophon">
+    <div><dt>Author</dt><dd>Lloyd Kelly</dd></div>
+    <div><dt>Publisher</dt><dd>E5 Enclave Inc.</dd></div>
+    <div><dt>EIN</dt><dd>99-3822441</dd></div>
+    <div><dt>License</dt><dd>CC0 1.0 Universal</dd></div>
+    <div><dt>Filed</dt><dd>April 22, 2026</dd></div>
+    <div><dt>DAG</dt><dd class="mono" style="font-size:10px;">reparations-framework-expanded-2026-0422</dd></div>
+  </dl>
+</section>
+
+<!-- THE PREMISE -->
+<section class="spread" id="framework">
+  <div class="col">
+    <p class="section-h">The Premise</p>
+    <div class="prose">
+      <blockquote>Reparations boil down to five simple questions.</blockquote>
+      <p class="dropcap">The question of reparations is not a political question. It is a legal and moral one. The five questions below are not rhetorical — they are sequential. Each answer is the logical foundation for the next. If you accept the first, the rest follow.</p>
+      <p>At the core of this framework is a specific economic claim: the theft of labor. For 246 years, the labor of enslaved Black Americans produced the wealth of a nation — and that labor was never compensated. Not partially. Not inadequately. Not at below-market rates. It was taken entirely, under law, by force, with no mechanism for recourse. What follows from that fact — legally, morally, and numerically — is what this framework addresses.</p>
+      <p>This document expands each of the five questions with the historical record, the legal foundation, the economic calculation, and the structural mechanism required to settle the claim. It does not ask for a new moral standard. It applies the standards this country already accepts in every other context where a debt is owed, an institution is liable, and a remedy is structured.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTION 1 -->
+<section class="spread">
+  <div class="split">
+    <aside class="side">
+      <p class="chapter-eyebrow">Question 01 · The Moral Foundation</p>
+      <p class="chapter-no">01</p>
+      <p class="q-card" style="border:none;display:block;padding:0;margin-top:16px;">
+        <span class="a">Yes.</span>
+      </p>
+      <div class="marg" style="margin-top:32px;">
+        <div class="label">In the Record</div>
+        <p>1926 Slavery Convention.</p>
+        <p>1948 Universal Declaration of Human Rights, Art. 4.</p>
+        <p>2002 Rome Statute of the ICC.</p>
+      </div>
+    </aside>
+    <div>
+      <h2 class="chapter-title">Is it a crime against humanity for one person to <em>own</em> another person?</h2>
+      <div class="prose">
+        <p class="lead">The ownership of a human being — the reduction of a person to property, the denial of their autonomy, their labor, their family, their name, their future — is a crime against humanity by any coherent moral standard.</p>
+
+        <p class="section-h">The principle is codified in settled international law.</p>
+
+        <p>The 1926 Slavery Convention, ratified by the United States, defines slavery as "the status or condition of a person over whom any or all of the powers attaching to the right of ownership are exercised." The 1948 Universal Declaration of Human Rights, Article 4, states without qualification: "No one shall be held in slavery or servitude." The Rome Statute of the International Criminal Court (2002) lists enslavement among the enumerated crimes against humanity. These are not aspirational documents. They are the legal architecture the United States itself helped build.</p>
+
+        <p class="section-h">What ownership actually means.</p>
+
+        <p>To own a person is to own their labor. It is to confiscate every hour of work they will ever perform. It is to foreclose every economic opportunity their effort would have generated — not only for them, but for their children, and their children's children. The crime is not only the theft of a life. It is the theft of every dollar that life would have earned, saved, invested, and passed forward.</p>
+
+        <p>American chattel slavery was not a milder variant of this crime. It was, in important respects, a more totalizing one. Unlike earlier forms of bondage, American slavery was hereditary — the child of an enslaved mother was enslaved at birth, by law, in perpetuity. It was racial — encoded by the "one drop" rule. It was comprehensive — it criminalized literacy, marriage, assembly, contract, travel, testimony, and self-defense. By 1860, the market value of enslaved human beings in the United States exceeded the combined value of all American railroads, factories, and banks.</p>
+
+        <p class="pull"><span class="mark">—</span> Some argue that slavery was "a product of its time." This argument fails on its own terms.</p>
+
+        <p>The abolitionist movement was as old as slavery itself. Quakers condemned the practice in 1688. Vermont abolished it in 1777. Britain abolished the slave trade in 1807 and slavery itself in 1833. The United States defended the institution for another three decades and fought a civil war to preserve it. The moral standard was available. The United States rejected it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTION 2 -->
+<section class="spread" style="background:var(--paper-deep);">
+  <div class="split flip">
+    <div>
+      <h2 class="chapter-title">Should a government create laws that allow one citizen to <em>own</em> another?</h2>
+      <div class="prose">
+        <p class="lead">No legitimate government has the authority to legislate the enslavement of its own people. The United States government, for nearly a century of its existence, did exactly this.</p>
+
+        <p class="section-h">The slave codes were not an oversight.</p>
+
+        <p>Virginia's 1705 Slave Code declared enslaved people to be "real estate." South Carolina's 1740 Negro Act made teaching an enslaved person to write a criminal offense. The federal Fugitive Slave Acts of 1793 and 1850 conscripted the entire machinery of the United States — courts, marshals, citizens in free states — into the enforcement of human bondage. The Supreme Court in <em>Dred Scott v. Sandford</em> (1857) ruled that Black people "had no rights which the white man was bound to respect." The Three-Fifths Compromise gave slaveholding states disproportionate representation in Congress on the basis of the enslaved population they denied any vote.</p>
+
+        <p class="section-h">The law criminalized Black economic participation.</p>
+
+        <p>The Slave Codes did not simply permit ownership of persons. They actively prohibited the enslaved from earning wages, accumulating property, learning to read, or contracting for their own labor. Every dollar that was not earned, every business that was not started, every inheritance that was never passed on, was foreclosed not by personal circumstance but by deliberate legal architecture.</p>
+
+        <p>This architecture did not end in 1865. It mutated. The Black Codes of 1865–1866 recreated the conditions of slavery under other names: vagrancy laws, apprenticeship statutes, contract labor laws, and the convict leasing system that persisted into the 1940s. When the federal government committed to explicitly discriminatory policy again — through HOLC redlining (1935–1940), the FHA Underwriting Manual, and the de facto exclusion of Black veterans from the G.I. Bill — it did so as the same institution that had written the Slave Codes two centuries earlier.</p>
+
+        <p>The values of the time are irrelevant to the question of institutional liability. A government does not get to invoke the moral limitations of its citizens to escape accountability for the laws it passed in their name. <strong>It is the government that is liable, not the era.</strong></p>
+      </div>
+    </div>
+    <aside class="side">
+      <p class="chapter-eyebrow">Question 02 · Government Accountability</p>
+      <p class="chapter-no">02</p>
+      <p class="q-card" style="border:none;display:block;padding:0;margin-top:16px;">
+        <span class="a">No.</span>
+      </p>
+      <div class="marg" style="margin-top:32px;">
+        <div class="label">Legal Architecture</div>
+        <p>Virginia Slave Code, 1705.</p>
+        <p>SC Negro Act, 1740.</p>
+        <p>Fugitive Slave Acts, 1793 / 1850.</p>
+        <p><em>Dred Scott v. Sandford</em>, 1857.</p>
+        <p>Three-Fifths Compromise.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- QUESTION 3 -->
+<section class="spread">
+  <div class="col-wide">
+    <div class="q-card">
+      <p class="num">03</p>
+      <div>
+        <p class="chapter-eyebrow">Liability</p>
+        <p class="q">If a government legalizes one citizen owning another, is that government responsible for the damage?</p>
+        <p class="a">Yes.</p>
+      </div>
+    </div>
+
+    <div class="prose col">
+      <p class="lead">The government that authored, enforced, and protected the legal infrastructure of chattel slavery bears direct institutional liability for the harms produced by that system. This liability does not dissolve with time, the death of perpetrators, or the passage of emancipation.</p>
+
+      <p class="section-h">Institutional liability is different from individual liability.</p>
+
+      <p>An individual criminal dies, and the state's claim dies with them. An institution — a corporation, a government — persists across generations. Its liabilities persist with it. The United States that passed the Civil Rights Act of 1964 is the United States that passed the Fugitive Slave Act of 1850. The Treasury that services today's federal debt is the Treasury that collected tariffs on slave-produced cotton. The Army that landed at Normandy is the Army that enforced the Fugitive Slave Act. This is not a philosophical abstraction. It is the operational principle on which the entire federal government functions.</p>
+
+      <p class="section-h">This is the same principle the United States already accepts.</p>
+
+      <p>When Congress passed the Civil Liberties Act of 1988, it acknowledged institutional liability for the incarceration of Japanese Americans four decades earlier. It did not argue that the officials responsible were dead, that the taxpayers of 1988 had not been party to the original wrong, or that the statute of limitations had run. It accepted that the institution that committed the wrong was the institution that owed the remedy: $20,000 per surviving internee plus a formal apology. Germany has paid reparations to Holocaust survivors and to Israel continuously since 1952. The United States negotiates reparations for property damaged by its military in foreign countries as a matter of routine.</p>
+
+      <p>The principle is not in dispute in any of these cases. It is in dispute here — and only here — because the claim is larger, the claimants are Black, and the remedy is politically costly.</p>
+
+      <p class="pull">The damages are not abstract. <span class="mark">They are calculable.</span></p>
+    </div>
+
+    <div class="ribbon">
+      <div class="cell"><div class="v">222B</div><div class="k">Hours of uncompensated labor · 1619–1865</div></div>
+      <div class="cell"><div class="v">$5.9–14.2T</div><div class="k">Compounded at 3% (Craemer 2015)</div></div>
+      <div class="cell"><div class="v">$17–105T</div><div class="k">Compounded at 6% (Craemer 2015)</div></div>
+      <div class="cell"><div class="v">4,400+</div><div class="k">Documented lynchings, post-emancipation</div></div>
+    </div>
+
+    <div class="prose col">
+      <p>Stolen wages. The market value of labor performed and never compensated across 246 years of chattel slavery — estimated by economist Thomas Craemer at approximately 222 billion hours, valued at prevailing free-labor wage rates of the period. Compounded loss. The economic value those wages, had they been paid and invested, would have generated across subsequent generations. Foreclosed opportunity — the wealth, business formation, land ownership, educational attainment, and political participation structurally denied through Black Codes, convict leasing, sharecropping debt peonage, racial terror, redlining, GI Bill exclusion, and urban renewal displacement.</p>
+
+      <p>Historian Ira Katznelson's <em>When Affirmative Action Was White</em> documents that of $95 billion in GI Bill benefits disbursed between 1944 and 1971, Black veterans received a share so small it is rounded to negligible in the official accounts. These were not private acts of prejudice. They were federal policy.</p>
+
+      <p>Courts have dismissed private reparations lawsuits on statute-of-limitations grounds, on sovereign immunity grounds, and on standing grounds — most notably in <em>In re African-American Slave Descendants Litigation</em> (7th Cir. 2006) and <em>Cato v. United States</em> (9th Cir. 1995). But these dismissals are not a moral verdict. They are a statement that the judicial branch, acting under existing doctrine, cannot provide the remedy. <strong>That is precisely why reparations must come from the legislative branch.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTION 4 -->
+<section class="spread dark">
+  <div class="col-wide">
+    <p class="chapter-eyebrow" style="color:rgba(255,255,255,0.6);">Question 04 · The Number and the Mechanism</p>
+    <h2 class="chapter-title" style="color:var(--paper);">What is owed, and how should it be <em>structured</em>?</h2>
+
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:end;margin:48px 0 64px;">
+      <div class="stat"><span class="num">$120T</span><span class="lbl" style="color:rgba(255,255,255,0.55);">Government non-taxable bond · principal in perpetuity</span></div>
+      <div class="prose" style="color:rgba(255,255,255,0.85);">
+        <p style="font-family:var(--serif-text);font-size:18px;line-height:1.55;">A reckoning with accumulated economic theft — unpaid wages of enslaved labor, compounded over centuries, adjusted for the ongoing denial of opportunity in the post-emancipation era. The number is large because the debt is large, and because it has been accumulating for a long time.</p>
+      </div>
+    </div>
+
+    <h3 class="subhead" style="color:var(--accent-soft);">The Derivation</h3>
+    <table class="dtable" style="color:var(--paper);">
+      <thead><tr><th>Component</th><th class="num">Amount</th><th>Methodology</th></tr></thead>
+      <tbody>
+        <tr><td>Unpaid wages 1619–1865, compounded 4–5%</td><td class="num">$40T</td><td class="meth">Craemer (2015), midpoint compounding</td></tr>
+        <tr><td>Post-emancipation wage suppression (sharecropping, convict leasing, 1865–1940)</td><td class="num">$20T</td><td class="meth">Extension of Craemer methodology to Jim Crow era</td></tr>
+        <tr><td>Redlining, FHA discrimination, GI Bill exclusion (1933–1968)</td><td class="num">$25T</td><td class="meth">Rothstein; Katznelson; foreclosed home equity compounded</td></tr>
+        <tr><td>Mass incarceration economic impact (1971–present)</td><td class="num">$10T</td><td class="meth">Lost wages, foreclosed employment, family disruption</td></tr>
+        <tr><td>Current racial wealth gap — present-day remedy</td><td class="num">$15T</td><td class="meth">Federal Reserve SCF; median gap × Black households</td></tr>
+        <tr><td>Compound interest on foreclosed opportunity</td><td class="num">$10T</td><td class="meth">Time-value adjustment on above</td></tr>
+        <tr><td><strong>Total</strong></td><td class="num">$120T</td><td class="meth">Reasoned midpoint of full-accounting view</td></tr>
+      </tbody>
+    </table>
+
+    <div class="prose" style="color:rgba(255,255,255,0.85);max-width:var(--col);margin-top:48px;">
+      <p>Thomas Craemer's high-estimate calculation, compounding unpaid wages at 6% to the present, produces a figure of approximately $152 trillion in 2024 dollars — using only the direct wage-theft component and no post-emancipation harms. The Darity/Mullen calculation in <em>From Here to Equality</em> (2020) arrives at approximately $10–14 trillion using a racial wealth gap methodology. <strong>The $120T figure is not the most aggressive number in the literature. It is a reasoned midpoint.</strong></p>
+
+      <p>$120 trillion is approximately four times current US GDP and roughly 3.5 times current federal debt. Two and a half centuries of uncompensated labor plus a century and a half of compounded foreclosure produces a number of this scale by arithmetic, not by rhetoric. <em>If the answer were smaller, it would be the wrong answer.</em></p>
+    </div>
+
+    <hr class="rule" style="background:rgba(255,255,255,0.18);margin:64px 0;">
+
+    <h3 class="subhead" style="color:var(--accent-soft);">Why a bond, not a check</h3>
+    <div class="prose" style="color:rgba(255,255,255,0.85);max-width:var(--col);">
+      <p>This is not a cash transfer. It is a structured financial instrument — a sovereign bond — issued by the United States government as a formal acknowledgment of institutional liability and a mechanism for sustained, intergenerational remedy.</p>
+      <p>A check-based approach has three fatal flaws. First, it treats a multigenerational theft as a single-event wrong. Second, it exposes the remedy to a single political moment — one administration, one appropriation, one chance to be undone. Third, it introduces massive distributional shocks into an economy not structured to absorb them. A bond-based perpetual endowment solves all three.</p>
+      <p>The principal is held in perpetuity. The structural precedent exists and works: Norway's Government Pension Fund Global holds over $1.9 trillion in a sovereign fund and spends only the expected real return each year, leaving the principal intact. No single election can raid the principal. <strong>That is the architecture this endowment should adopt.</strong></p>
+    </div>
+
+    <h3 class="subhead" style="color:var(--accent-soft);margin-top:64px;">Annual interest paid to eligible recipients</h3>
+    <p style="color:rgba(255,255,255,0.7);font-family:var(--sans);font-size:14px;max-width:var(--col);">At a midpoint yield of 5%, the bond generates approximately <strong style="color:var(--paper);">$6 trillion per year</strong> in non-taxable distributions. Distribution per person varies with eligible population and yield.</p>
+
+    <table class="dtable" style="color:var(--paper);margin-top:24px;">
+      <thead><tr><th>Recipients</th><th class="num">At 3% Yield</th><th class="num">At 5% Yield</th><th class="num">At 7% Yield</th></tr></thead>
+      <tbody>
+        <tr><td>30 million eligible</td><td class="num">~$120,000</td><td class="num">~$200,000</td><td class="num">~$280,000</td></tr>
+        <tr><td>40 million eligible</td><td class="num">~$90,000</td><td class="num">~$150,000</td><td class="num">~$210,000</td></tr>
+      </tbody>
+    </table>
+    <p style="color:rgba(255,255,255,0.55);font-family:var(--sans);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;margin-top:8px;">Per person · per year · non-taxable</p>
+
+    <hr class="rule" style="background:rgba(255,255,255,0.18);margin:64px 0;">
+
+    <h3 class="subhead" style="color:var(--accent-soft);">The Reestablishment of the Freedmen's Bureau</h3>
+    <div class="prose" style="color:rgba(255,255,255,0.85);max-width:var(--col);">
+      <p>The administrative and custodial infrastructure for this framework is a reconstituted Freedmen's Bureau — reestablished as an autonomous, independent institution with a structure and authority analogous to the Federal Reserve. Governors would serve long staggered terms; the institutional charter would require a supermajority of Congress to amend.</p>
+      <ul>
+        <li><strong>Autonomous and independent</strong> — structurally insulated from the political cycle.</li>
+        <li><strong>Keeper of the funds</strong> — the principal is held inviolate; only the yield is distributed.</li>
+        <li><strong>Investment mandate</strong> — long-term financial health of the endowment, with an explicit ethical screen.</li>
+        <li><strong>Lineage-verified leadership</strong> — the institution is governed by those it serves.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTION 5 -->
+<section class="spread">
+  <div class="split">
+    <aside class="side">
+      <p class="chapter-eyebrow">Question 05 · Eligibility</p>
+      <p class="chapter-no">05</p>
+      <p class="q-card" style="border:none;display:block;padding:0;margin-top:16px;">
+        <span class="a">Lineage-based.</span>
+      </p>
+      <div class="marg" style="margin-top:32px;">
+        <div class="label">Documentation</div>
+        <p>Census records, 1870 forward.</p>
+        <p>Freedmen's Bureau records.</p>
+        <p>Freedman's Savings Bank records.</p>
+        <p>Southern Claims Commission records.</p>
+        <p>Church and family records, oral histories corroborated by documentary evidence.</p>
+      </div>
+    </aside>
+    <div>
+      <h2 class="chapter-title">Who is <em>eligible</em>?</h2>
+      <div class="prose">
+        <p class="lead">Eligibility is grounded in lineage — in the documented inheritance of stolen labor and foreclosed opportunity. The injury is not to the category "Black people in America." It is to a specific, identifiable population: the descendants of those enslaved in the United States.</p>
+
+        <p>The Darity standard — developed by economist William "Sandy" Darity Jr. and policy researcher A. Kirsten Mullen in <em>From Here to Equality: Reparations for Black Americans in the Twenty-First Century</em> (2020) — provides the most rigorous existing framework for lineage-based eligibility.</p>
+
+        <p class="section-h">The two-prong test.</p>
+
+        <p><strong>Prong 1 — Lineage.</strong> The individual must have at least one ancestor who was enslaved in the United States.</p>
+        <p><strong>Prong 2 — Self-identification.</strong> The individual must have self-identified as Black, African American, or Negro on a legal document or in a government record prior to the establishment of the reparations program. This prong exists to prevent opportunistic reclassification and to ensure that eligibility tracks the lived experience of being identified as Black in American society.</p>
+
+        <p class="section-h">The eligible population.</p>
+
+        <p>The population estimate is approximately <strong>30–40 million individuals</strong> — the descendants of enslaved people in the United States, a subset of the roughly 46 million Americans who identify as Black or African American. The difference is the population of recent Black immigrants and their descendants, whose ancestors were not enslaved under US law. This is not an exclusion motivated by hostility. It is a recognition that reparations address a specific historical claim, and the claim has specific claimants.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section class="spread" style="background:var(--paper-deep);">
+  <div class="col-wide">
+    <p class="section-h">The Five Questions · Summary</p>
+    <table class="dtable" style="font-size:15px;">
+      <thead><tr><th style="width:48px;">Q</th><th>Question</th><th style="width:36%;">Answer</th></tr></thead>
+      <tbody>
+        <tr><td class="accent" style="font-family:var(--serif-display);font-weight:900;font-size:20px;">01</td><td>Is it a crime against humanity to own a person?</td><td><strong>Yes.</strong></td></tr>
+        <tr><td class="accent" style="font-family:var(--serif-display);font-weight:900;font-size:20px;">02</td><td>Should government legalize ownership of citizens?</td><td><strong>No.</strong></td></tr>
+        <tr><td class="accent" style="font-family:var(--serif-display);font-weight:900;font-size:20px;">03</td><td>Is the government liable for damage to the enslaved?</td><td><strong>Yes.</strong></td></tr>
+        <tr><td class="accent" style="font-family:var(--serif-display);font-weight:900;font-size:20px;">04</td><td>What is the remedy?</td><td><strong>$120T non-taxable bond, principal in perpetuity. Interest (~$6T/yr) distributed annually. Freedmen's Bureau reconstituted under a Federal-Reserve-analogous governance model.</strong></td></tr>
+        <tr><td class="accent" style="font-family:var(--serif-display);font-weight:900;font-size:20px;">05</td><td>Who is eligible?</td><td><strong>Darity standard. Lineage-based. Two-prong test: (1) ancestor enslaved in US, (2) self-identified as Black prior to program.</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- A NOTE ON FRAMING -->
+<section class="spread">
+  <div class="col">
+    <p class="section-h">A Note on Framing</p>
+    <h2 class="chapter-title" style="font-size:clamp(36px,4.5vw,60px);">Reparations · Restoration · <em>Restitution</em></h2>
+    <div class="prose">
+      <p class="lead">While the descendants of the enslaved will receive the distributions, this framework is not framed as charity, as a gift, or as a political concession. It is framed as restoration — the return of what was taken, structured to match the scale and duration of the taking.</p>
+      <p>The three words in the title are a sequence, not synonyms.</p>
+    </div>
+    <div class="ribbon" style="margin-top:32px;">
+      <div class="cell"><div class="v">Reparations</div><div class="k">Acknowledges the debt</div></div>
+      <div class="cell"><div class="v">Restoration</div><div class="k">Returns what was taken</div></div>
+      <div class="cell"><div class="v">Restitution</div><div class="k">Settles the claim</div></div>
+    </div>
+    <div class="prose">
+      <p>The first two, absent the third, are rhetoric. <strong>The third is the work.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- APPENDIX -->
+<section class="spread" id="appendix">
+  <div class="col">
+    <p class="section-h">Appendix · Frequently Raised Objections</p>
+
+    <div class="obj">
+      <div class="q-mark">Objection</div>
+      <p class="q-text">"My family never owned slaves. Why should I pay?"</p>
+      <div class="prose"><p>You are not paying. The United States government is paying, as the liable institution. Your tax dollars fund federal obligations incurred long before you were born — the national debt, Social Security, veterans' benefits, Treasury obligations dating to the Revolutionary War. You did not personally borrow the money that built the interstate highway system. You service the debt because you are a beneficiary of the system the debt created. The same principle applies here.</p></div>
+    </div>
+
+    <div class="obj">
+      <div class="q-mark">Objection</div>
+      <p class="q-text">"Too much time has passed. The statute of limitations has run."</p>
+      <div class="prose"><p>Statutes of limitations do not apply to legislative appropriations. Congress is not a court adjudicating a private claim. It is a sovereign legislature authorizing an appropriation. It has appropriated funds for historical remedy many times — to Japanese American internees 46 years after the fact, to Native American tribes for treaty violations across centuries. The statute of limitations is a judicial doctrine governing private lawsuits. It does not govern congressional action, and it never has.</p></div>
+    </div>
+
+    <div class="obj">
+      <div class="q-mark">Objection</div>
+      <p class="q-text">"Reparations were already paid through welfare, affirmative action, and the Civil Rights Act."</p>
+      <div class="prose"><p>They were not. Welfare is a means-tested transfer program available to all Americans below an income threshold. Affirmative action was a corrective for present discrimination, not a settlement of historical debt. The Civil Rights Act of 1964 prohibited future discrimination; it did not remedy the harm of past discrimination. None of these programs calculated the debt, acknowledged institutional liability, or structured restitution. They did not pay reparations.</p></div>
+    </div>
+
+    <div class="obj">
+      <div class="q-mark">Objection</div>
+      <p class="q-text">"Money doesn't solve racism."</p>
+      <div class="prose"><p>Correct. Money does not solve racism. It was never meant to. Reparations settle a wage debt. Racism is a separate, ongoing, and partially independent problem. The federal government can and should continue to enforce civil rights law — and can and should pay the debt it owes for 246 years of uncompensated labor. These are not alternatives.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<footer class="colofoot">
+  <div class="grid">
+    <div>
+      <h4>E5 Enclave</h4>
+      <p>Liberty City, Miami, Florida</p>
+      <p>EIN · 99-3822441</p>
+      <p>e5enclave.com</p>
+    </div>
+    <div>
+      <h4>This Document</h4>
+      <p>Restitution 246 — A Framework in Five Questions</p>
+      <p>Developed by Lloyd Kelly</p>
+      <p>April 22, 2026</p>
+    </div>
+    <div>
+      <h4>License</h4>
+      <p>CC0 1.0 Universal — Public Domain</p>
+      <p>This work is dedicated to the public domain. No rights reserved.</p>
+    </div>
+    <div>
+      <h4>DAG</h4>
+      <p class="mono">reparations-framework-expanded-2026-0422</p>
+    </div>
+  </div>
+</footer>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+const { useTweaks, TweaksPanel, TweakSection, TweakColor, TweakRadio, TweakSelect } = window;
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "palette": "wound",
+  "display": "Zilla Slab",
+  "body": "Inter"
+}/*EDITMODE-END*/;
+
+function Tweaks() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  React.useEffect(() => {
+    document.body.classList.remove('pal-restitution', 'pal-parallel', 'pal-wound');
+    document.body.classList.add('pal-' + t.palette);
+    document.documentElement.style.setProperty('--serif-display', `"${t.display}", Georgia, serif`);
+    document.documentElement.style.setProperty('--serif-text', `"${t.body}", Georgia, serif`);
+  }, [t]);
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakSection title="Palette">
+        <TweakRadio label="Article" value={t.palette} onChange={v => setTweak('palette', v)}
+          options={[
+            {value: 'restitution', label: 'Pine'},
+            {value: 'parallel', label: 'Sepia'},
+            {value: 'wound', label: 'Bone'},
+          ]} />
+      </TweakSection>
+      <TweakSection title="Typography">
+        <TweakSelect label="Display" value={t.display} onChange={v => setTweak('display', v)}
+          options={['Roboto Slab', 'Zilla Slab', 'Bevan', 'Source Serif 4']} />
+        <TweakSelect label="Body" value={t.body} onChange={v => setTweak('body', v)}
+          options={['Source Serif 4', 'Crimson Pro', 'Lora', 'Inter']} />
+      </TweakSection>
+    </TweaksPanel>
+  );
+}
+
+const root = document.createElement('div');
+document.body.appendChild(root);
+ReactDOM.createRoot(root).render(<Tweaks />);
+</script>
+
+<script>
+// Reveal on scroll
+const obs = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.spread').forEach(el => {
+  el.classList.add('reveal');
+  obs.observe(el);
+});
+</script>
+
+
+    </article>
+  </div>
+</div>
+<script>
+// Reading progress bar
+window.addEventListener('scroll', function() {
+  var doc = document.documentElement;
+  var body = document.body;
+  var scrollTop = doc.scrollTop || body.scrollTop;
+  var scrollHeight = (doc.scrollHeight || body.scrollHeight) - doc.clientHeight;
+  var pct = scrollHeight > 0 ? (scrollTop / scrollHeight * 100).toFixed(1) : 0;
+  document.getElementById('dispatch-progress').style.width = pct + '%';
+});
+// Chapter outline from h2/h3
+(function() {
+  var headings = document.querySelectorAll('#article-body h2, #article-body h3');
+  var list = document.getElementById('chapter-list');
+  headings.forEach(function(h, i) {
+    if (!h.id) h.id = 'chapter-' + i;
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent.trim().substring(0, 42) + (h.textContent.length > 42 ? '…' : '');
+    a.style.cssText = 'font-size:11px;color:rgba(0,0,0,.5);text-decoration:none;line-height:1.5;display:block;padding:4px 0;border-left:2px solid transparent;padding-left:10px;transition:.2s;';
+    a.onmouseover = function() { this.style.color='var(--accent,#6d1f20)'; this.style.borderLeftColor='var(--accent,#6d1f20)'; };
+    a.onmouseout = function() { this.style.color='rgba(0,0,0,.5)'; this.style.borderLeftColor='transparent'; };
+    list.appendChild(a);
+  });
+})();
+// Citation copy
+function copyCite() {
+  var cite = 'E5 Enclave. (MMXXVI). Restitution 246. E5 Enclave Incorporated. Retrieved from https://e5enclave.com/dispatches/';
+  navigator.clipboard.writeText(cite).then(function() {
+    var btn = document.getElementById('cite-btn');
+    btn.textContent = 'Copied!';
+    setTimeout(function(){ btn.textContent = 'Cite'; }, 2000);
+  });
+}
+// Mobile: hide apparatus on small screens
+if (window.innerWidth < 768) {
+  var app = document.getElementById('apparatus');
+  if (app) app.style.display = 'none';
+}
+</script>
+<section style="background:var(--bone-2,#ebe3d1);padding:64px 56px;border-top:1px solid rgba(0,0,0,.12);">
+  <div style="max-width:1280px;margin:0 auto;">
+    <p style="font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:var(--oxblood,#6d1f20);font-weight:600;margin:0 0 28px;">Read Also</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/a254b04ab_parallel-negros.html" style="border:1px solid rgba(0,0,0,.14);padding:28px;text-decoration:none;color:inherit;display:block;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--oxblood,#6d1f20)'" onmouseout="this.style.borderColor='rgba(0,0,0,.14)'">
+        <p style="font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--oxblood,#6d1f20);margin:0 0 8px;font-weight:600;">Think Tank Dispatch</p>
+        <p style="font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:400;margin:0 0 8px;">Parallel Negros</p>
+        <p style="font-size:13px;color:rgba(0,0,0,.5);margin:0;line-height:1.6;">The parallel architectures that shape the lineage's path through American history.</p>
+      </a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/2786ddd03_measure-the-wound.html" style="border:1px solid rgba(0,0,0,.14);padding:28px;text-decoration:none;color:inherit;display:block;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--oxblood,#6d1f20)'" onmouseout="this.style.borderColor='rgba(0,0,0,.14)'">
+        <p style="font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--oxblood,#6d1f20);margin:0 0 8px;font-weight:600;">Foundational Record</p>
+        <p style="font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:400;margin:0 0 8px;">Measure the Wound</p>
+        <p style="font-size:13px;color:rgba(0,0,0,.5);margin:0;line-height:1.6;">Documentation of the harms we repair. What is measured cannot be dismissed.</p>
+      </a>
+      <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/7ad34832d_restitution-246.html" style="border:1px solid rgba(0,0,0,.14);padding:28px;text-decoration:none;color:inherit;display:block;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--oxblood,#6d1f20)'" onmouseout="this.style.borderColor='rgba(0,0,0,.14)'">
+        <p style="font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--oxblood,#6d1f20);margin:0 0 8px;font-weight:600;">Campaign Framework</p>
+        <p style="font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:400;margin:0 0 8px;">Restitution 246</p>
+        <p style="font-size:13px;color:rgba(0,0,0,.5);margin:0;line-height:1.6;">The Lloyd Kelly framework for the 246 years of stolen labor.</p>
+      </a>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-wordmark"><em>E5</em> ENCLAVE</div>
+      <p class="footer-tag">A lineage-led think tank comprised of a Coalition of the Willing.</p>
+      <p class="footer-sub">E5 Enclave Incorporated · 501(c)(3) Public Charity<br>EIN 99-3822441 · Liberty City, Miami, Florida · Founded MMXXIV</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <p class="footer-col-head">The Record</p>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/a254b04ab_parallel-negros.html">Parallel Negros</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/2786ddd03_measure-the-wound.html">Measure the Wound</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/7ad34832d_restitution-246.html">Restitution 246</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">Departments</p>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b5e0053a6_doctrine.html">Doctrine</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/0628dd8c3_pillars.html">The Five Pillars</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/0ef6b15c2_index.html">Dispatches Index</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">Programs</p>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/70ef36e95_environmental.html">Lineage Farms · FarmBlock</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/3bf0f3b9d_educational.html">McCartney Academy</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/fd5cdd7da_engagement.html">Block to the Boardroom</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">Coalition</p>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b8cbea39c_coalition.html">Members</a>
+        <a href="https://base44.app/api/apps/69d7dd5e015cd1aa45c3e283/files/mp/public/69d7dd5e015cd1aa45c3e283/b8cbea39c_coalition.html#join">Apply</a>
+        <a href="mailto:info@e5enclave.com">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-base">
+    <span>© MMXXVI E5 Enclave Incorporated</span>
+    <span class="footer-orn">✦</span>
+    <span>Founded 2 June MMXXIV · Liberty City</span>
+    <span class="footer-orn">✦</span>
+    <span>For the next thousand years</span>
+  </div>
+</footer>
+</body>
+</html>
