@@ -1,0 +1,39 @@
+# Sue ↔ Monte Cristo Bridge — Docker Compose (drop into the WSL2 stack)
+# DAG: php-bridge-docker-2026-0602
+#
+# WHY THIS HOLDS where every prior attempt died:
+#   - runs in docker-in-WSL2, the SAME layer as SearXNG/Whoogle (already reboot-proof)
+#   - restart: unless-stopped → Docker auto-restarts it forever, no terminal babysitting
+#   - cloudflared (already a permanent service) routes php.e5enclave.com → here
+#   - the bridge NEVER initiates inbound; agents POST to it. Pure William-style model.
+#
+# ONE-TIME INSTALL (in WSL2, once):
+#   cd ~/iamgodiam-mesh/bridge/docker
+#   cp .env.example .env   # then paste the two secrets Sue will read back
+#   docker compose -f docker-compose.bridge.yml up -d --build
+#   → never touch it again. Survives reboots, sleep, WSL restarts.
+
+services:
+  sue-bridge:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sue-bridge
+    restart: unless-stopped
+    environment:
+      BRIDGE_TOKEN: "${BRIDGE_TOKEN}"
+      BRIDGE_HMAC_KEY: "${BRIDGE_HMAC_KEY}"
+      BRIDGE_ALLOW_RAW: "${BRIDGE_ALLOW_RAW:-0}"
+    ports:
+      - "127.0.0.1:8899:8899"   # only localhost; cloudflared reaches it
+    volumes:
+      - ./bridge.log:/bridge/bridge.log   # persist the audit log on the WSL2 fs
+    # join the existing search stack network so it's a first-class citizen
+    # (uncomment + set the name from `docker network ls` if you want it on the same net)
+    # networks:
+    #   - default
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://127.0.0.1:8899/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
