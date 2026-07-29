@@ -76,14 +76,6 @@ input{outline:none;font-family:'Georgia',serif}input::placeholder{color:#555577}
         <h3 style="font-size:11px;color:#555577;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;font-weight:normal">Related Clusters</h3>
         <a href="cluster-ub.html" style="display:block;padding:10px 0;border-bottom:1px solid #1a1a2e;color:#9999bb;font-size:12px">Urantia Book Study Guides →</a><a href="cluster-eden-phil.html" style="display:block;padding:10px 0;border-bottom:1px solid #1a1a2e;color:#9999bb;font-size:12px">EDEN Philosophy →</a><a href="cluster-bdi.html" style="display:block;padding:10px 0;border-bottom:1px solid #1a1a2e;color:#9999bb;font-size:12px">Black Dragon Initiative →</a><a href="cluster-sovereign-lore.html" style="display:block;padding:10px 0;border-bottom:1px solid #1a1a2e;color:#9999bb;font-size:12px">SOVEREIGN Game Lore →</a>
       </div>
-      <div style="background:#0d0d18;border:1px solid #1a1a2e;border-radius:8px;padding:20px">
-        <h3 style="font-size:11px;color:#c9a84c;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-weight:normal">✦ Ask The Mesh</h3>
-        <div id="inlinechat" style="max-height:240px;overflow-y:auto;margin-bottom:12px;padding:4px 0;font-size:12px"></div>
-        <div style="display:flex;gap:8px">
-          <input id="inlineinput" onkeydown="if(event.key==='Enter')sendInline()" placeholder="Ask a question..." style="flex:1;background:#070710;border:1px solid #1a1a2e;color:#e8d5a3;padding:10px 12px;border-radius:4px;font-size:12px"/>
-          <button onclick="sendInline()" style="background:#c9a84c22;border:1px solid #c9a84c66;color:#c9a84c;padding:10px 12px;border-radius:4px;cursor:pointer;font-size:12px">→</button>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -93,46 +85,5 @@ input{outline:none;font-family:'Georgia',serif}input::placeholder{color:#555577}
   <div style="color:#555577;font-size:10px">Sovereign Knowledge Mesh · https://iamgodiam.net · February 17, 2027</div>
 </footer>
 
-<script>
-function toggleChat(){var p=document.getElementById('chatpanel');p.style.display=p.style.display==='flex'?'none':'flex';}
-async function sendMsg(){
-  var q=document.getElementById('chatinput').value.trim();if(!q)return;
-  var msgs=document.getElementById('chatmsgs');
-  msgs.innerHTML+='<div style="text-align:right;margin:8px 0"><span style="background:#1a1a2e;color:#e8d5a3;padding:8px 12px;border-radius:12px 12px 0 12px;font-size:12px;display:inline-block;max-width:80%">'+q+'</span></div>';
-  document.getElementById('chatinput').value='';msgs.scrollTop=msgs.scrollHeight;
-  try{
-    var r=await fetch('https://sue-45c3e283.base44.app/functions/edenRegistryMcp',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'chat',message:q})});
-    var d=await r.json();var ans=d.response||d.message||'The oracle contemplates your question.';
-    msgs.innerHTML+='<div style="text-align:left;margin:8px 0"><span style="background:#13101f;color:#9999bb;padding:8px 12px;border-radius:12px 12px 12px 0;font-size:12px;display:inline-block;max-width:80%;font-style:italic">'+ans+'</span></div>';
-  }catch(e){msgs.innerHTML+='<div style="text-align:left;margin:8px 0"><span style="background:#13101f;color:#9999bb;padding:8px 12px;border-radius:12px 12px 12px 0;font-size:12px;display:inline-block;max-width:80%;font-style:italic">The mesh is listening.</span></div>';}
-  msgs.scrollTop=msgs.scrollHeight;
-}
-</script>
-<button onclick="toggleChat()" style="position:fixed;bottom:28px;right:28px;z-index:200;background:#c9a84c;color:#070710;border:none;border-radius:50%;width:52px;height:52px;font-size:22px;cursor:pointer;box-shadow:0 4px 20px #c9a84c44">✦</button>
-<div id="chatpanel" style="display:none;position:fixed;bottom:90px;right:28px;z-index:200;width:320px;height:400px;background:#0d0d18;border:1px solid #1a1a2e;border-radius:12px;flex-direction:column;box-shadow:0 8px 40px #00000088">
-  <div style="padding:14px 16px;border-bottom:1px solid #1a1a2e;display:flex;justify-content:space-between;align-items:center">
-    <span style="color:#c9a84c;font-size:13px;letter-spacing:2px">✦ ASK THE MESH</span>
-    <span onclick="toggleChat()" style="color:#555577;cursor:pointer;font-size:18px">×</span>
-  </div>
-  <div id="chatmsgs" style="flex:1;overflow-y:auto;padding:14px;font-size:12px"></div>
-  <div style="padding:10px;border-top:1px solid #1a1a2e;display:flex;gap:8px">
-    <input id="chatinput" onkeydown="if(event.key==='Enter')sendMsg()" placeholder="Ask a question..." style="flex:1;background:#070710;border:1px solid #1a1a2e;color:#e8d5a3;padding:8px 10px;border-radius:4px;font-size:12px"/>
-    <button onclick="sendMsg()" style="background:#c9a84c22;border:1px solid #c9a84c66;color:#c9a84c;padding:8px 12px;border-radius:4px;cursor:pointer;font-size:12px">→</button>
-  </div>
-</div>
-<script>
-async function sendInline(){
-  var q=document.getElementById('inlineinput').value.trim();if(!q)return;
-  var msgs=document.getElementById('inlinechat');
-  msgs.innerHTML+='<div style="text-align:right;margin:6px 0"><span style="background:#1a1a2e;color:#e8d5a3;padding:6px 10px;border-radius:8px 8px 0 8px;font-size:11px;display:inline-block;max-width:90%">'+q+'</span></div>';
-  document.getElementById('inlineinput').value='';msgs.scrollTop=msgs.scrollHeight;
-  try{
-    var r=await fetch('https://sue-45c3e283.base44.app/functions/edenRegistryMcp',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'chat',message:q})});
-    var d=await r.json();var ans=d.response||d.message||'The oracle listens.';
-    msgs.innerHTML+='<div style="margin:6px 0"><span style="background:#13101f;color:#9999bb;padding:6px 10px;border-radius:8px 8px 8px 0;font-size:11px;display:inline-block;max-width:90%;font-style:italic">'+ans+'</span></div>';
-  }catch(e){msgs.innerHTML+='<div style="margin:6px 0"><span style="background:#13101f;color:#9999bb;padding:6px 10px;border-radius:8px 8px 8px 0;font-size:11px;display:inline-block;max-width:90%;font-style:italic">The mesh is listening.</span></div>';}
-  msgs.scrollTop=msgs.scrollHeight;
-}
-</script>
 </body>
 </html>
