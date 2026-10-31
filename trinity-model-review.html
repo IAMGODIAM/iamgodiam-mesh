@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Trinity Model Review — Live Dashboard</title>
+<style>
+:root{
+  --paper:#f5efe1; --paper2:#faf6ec; --card:#fffdf7; --ink:#251c12; --ink2:#0a0a0e; --muted:#5b5648;
+  --navy:#0b1f3a; --navy2:#122e52; --gold:#c9a84c; --gold-hi:#ecd9a4; --gold-deep:#8a6b1c;
+  --line:#ddd3b8; --line2:#e8dfc8;
+  --ok:#1e5c3a; --bad:#9c2b2b; --mid:#7a5410; --unk:#4b5563;
+  --t1:#1e5c3a; --t2:#2f6b4f; --t3:#7a5410; --t4:#9c2b2b;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#0a0a0e; --paper2:#101018; --card:#14141d; --ink:#f5efe1; --ink2:#f5efe1; --muted:#b8b09a; --line:#2c2c3a; --line2:#23232e; }
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;font-size:16.5px;line-height:1.65}
+.sans{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--navy)} @media(prefers-color-scheme:dark){a{color:var(--gold-hi)}}
+.topnav{position:sticky;top:0;z-index:20;background:var(--navy);color:#f5efe1;border-bottom:3px solid var(--gold);overflow-x:auto;white-space:nowrap}
+.topnav .in{max-width:1180px;margin:0 auto;padding:10px 18px;display:flex;gap:6px;align-items:center}
+.topnav a{color:#e8e2d2;text-decoration:none;font-family:-apple-system,"Segoe UI",sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em;padding:6px 10px;border-radius:20px}
+.topnav a:hover{background:rgba(201,168,76,.25);color:#fff}
+.topnav .brand{font-family:Georgia,serif;font-size:15px;font-weight:700;color:#fff;margin-right:8px;letter-spacing:.02em}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 18px 60px}
+.kicker{font-family:-apple-system,"Segoe UI",sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:11.5px;font-weight:700;color:var(--gold-deep);margin:0 0 8px}
+@media(prefers-color-scheme:dark){.kicker{color:var(--gold)}}
+h1{font-size:42px;line-height:1.1;margin:0;color:var(--navy)} @media(prefers-color-scheme:dark){h1{color:#fff}}
+h2{font-size:26px;line-height:1.25;color:var(--navy);margin:0 0 12px} @media(prefers-color-scheme:dark){h2{color:#fff}}
+h3{font-size:18px;color:var(--navy);margin:18px 0 6px} @media(prefers-color-scheme:dark){h3{color:var(--gold-hi)}}
+.sub{font-style:italic;font-size:19px;color:var(--muted);margin:6px 0 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px} @media(max-width:820px){.grid{grid-template-columns:1fr} h1{font-size:32px}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin:18px 0;scroll-margin-top:70px}
+.panel-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:2px solid var(--gold);padding-bottom:10px;margin-bottom:14px;flex-wrap:wrap}
+.panel-head .num{font-family:-apple-system,sans-serif;font-size:12px;font-weight:700;letter-spacing:.15em;color:var(--gold-deep)}
+.verdict{background:var(--navy);color:#f5efe1;border-radius:14px;padding:28px 30px;margin:22px 0;border:1px solid var(--navy2)}
+.verdict .kicker{color:var(--gold)}
+.verdict h2{color:#fff;font-size:30px;border:0}
+.verdict p{color:#e8e2d2}
+.verdict .big{font-size:34px;letter-spacing:.02em}
+.ballot{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.ballot span{font-family:-apple-system,sans-serif;font-size:13px;font-weight:600;background:rgba(255,255,255,.1);border:1px solid rgba(201,168,76,.5);padding:5px 12px;border-radius:20px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0} @media(max-width:700px){.stats{grid-template-columns:1fr 1fr}}
+.stat{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:10px;padding:14px 16px;text-align:center}
+.stat b{display:block;font-size:30px;color:var(--navy);line-height:1.1} @media(prefers-color-scheme:dark){.stat b{color:#fff}}
+.stat span{font-family:-apple-system,sans-serif;font-size:12.5px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:12px 0}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line2);vertical-align:top}
+th{color:var(--navy);border-bottom:2px solid var(--gold);font-size:14px} @media(prefers-color-scheme:dark){th{color:var(--gold-hi)}}
+.chip{display:inline-block;font-family:-apple-system,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.04em;padding:3px 10px;border-radius:20px;color:#fff;white-space:nowrap}
+.ok{background:var(--ok)} .bad{background:var(--bad)} .mid{background:var(--mid)} .unk{background:var(--unk)}
+.t1{background:var(--t1)} .t2{background:var(--t2)} .t3{background:var(--t3)} .t4{background:var(--t4)} .tmix{background:#5b4a8a}
+blockquote{margin:16px 0;padding:16px 20px;border-left:4px solid var(--gold);background:var(--paper2);border-radius:0 10px 10px 0;font-style:italic}
+blockquote .src{display:block;font-style:normal;font-family:-apple-system,sans-serif;font-size:13px;color:var(--muted);margin-top:8px}
+ol.amend li, ol.qs li{margin:12px 0}
+.tag{font-family:-apple-system,sans-serif;font-weight:700;color:var(--gold-deep);letter-spacing:.05em}
+.checklist{list-style:none;margin:8px 0;padding:0}
+.checklist li{padding:10px 14px;border:1px solid var(--line2);border-radius:10px;margin:8px 0;background:var(--paper2)}
+.two{columns:2;column-gap:28px} @media(max-width:700px){.two{columns:1}}
+.small{font-size:14px;color:var(--muted)}
+.foot{border-top:2px solid var(--gold);margin-top:28px;padding-top:16px;font-size:14px;color:var(--muted)}
+@media print{.topnav{position:static} body{background:#fff} .panel,.verdict{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav class="topnav"><div class="in">
+<span class="brand">Trinity Model Review</span>
+<a href="#verdict">Verdict</a><a href="#holds">What Holds</a><a href="#findings">Findings</a><a href="#loadtest">Load Test</a><a href="#amendments">Amendments</a><a href="#questions">Questions</a><a href="#dissent">Dissent</a><a href="#evidence">Evidence Base</a><a href="#addendum">Addendum</a>
+</div></nav>
+
+<div class="wrap">
+<p class="kicker">Independent Review · Council Record · October 25, 2026</p>
+<h1>The Trinity Model — Review Dashboard</h1>
+<p class="sub">A review of “The Full AI-Loadable Trinity Model” by Edward J. Warmus — freetrinitymodel.com</p>
+<p class="sans small">Prepared for the author, at the request of a friend who took the work seriously enough to test it properly. Method: four independent review teams — claim mapping, source verification, a live load test of the model as an AI lens, and prior-art / adversarial analysis — and a five-seat council verdict on the verified record.</p>
+
+<div class="stats">
+<div class="stat"><b>45</b><span>claims mapped</span></div>
+<div class="stat"><b>12</b><span>physics claims — 0 specify a test</span></div>
+<div class="stat"><b>5 / 2 / 3 / 1</b><span>door-checks: Supported / Unsupported / Misstated / Unverifiable</span></div>
+<div class="stat"><b>4–1</b><span>council verdict</span></div>
+</div>
+
+<section class="verdict" id="verdict">
+<p class="kicker">The Council's Verdict</p>
+<h2 class="big">SOUND WITH AMENDMENTS — 4–1</h2>
+<p>As a contemplative lens and a practice, the Trinity Model is a genuine, well-made thing: a skillful compression of a large spiritual library into a three-beat loop a person can actually run. As what its own header claims — <i>“a complete, testable, multi-disciplinary framework for consciousness, physics, metaphysics, and soul evolution”</i> — it does not stand. Its physics claims are untestable as written, its single most precise physical claim is contradicted by measurement, and its loading instructions forbid the very examination its header invites. Every one of those faults is repairable.</p>
+<p><b>What the verdict means in one line:</b> sound as a contemplative lens and practice; not sound as the testable physics framework its header claims — until the seven amendments are made.</p>
+<div class="ballot">
+<span>V2 — Sound with amendments: Thoth</span><span>V2: Leonardo</span><span>V2: Crowley</span><span>V2: Wolfram</span><span>V4 — Not sound: Einstein</span><span>V1 “Sound as claimed”: 0</span><span>V3 “Watch”: 0</span>
+</div>
+<p class="small" style="color:#cfc7ae">Ranked-choice ballot, Round 1. V2 held a majority of first choices (4 of 5); no runoff required. The dissent is printed in full below.</p>
+</section>
+
+<div class="grid">
+<section class="panel">
+<div class="panel-head"><h2>What the model is</h2><span class="num">§1</span></div>
+<p>The Trinity Model proposes that reality runs on a single three-movement cycle, pictured as a toroidal vortex — <b>out → in → up</b>:</p>
+<ul>
+<li><b>Infinite Potential</b> (the Father) — the outward flare; the field of all possibilities; “a reservoir, not a place to live.”</li>
+<li><b>Selection &amp; Manifestation</b> (the Son) — the inward focus; intention crystallizes one slice of possibility into form.</li>
+<li><b>Reflection &amp; Regenesis</b> (the Spirit) — the return that does not close on the same plane; experience is “composted” into a higher octave.</li>
+</ul>
+<p>Around that cycle the document assembles a shelf of sources — the Urantia Book (ultimatons, the Thought Adjuster, the morontia life), Dewey Larson’s Reciprocal System, Stephen Wolfram, Integrated Information Theory’s Φ, the Law of One, Michael Newton’s <i>Journey of Souls</i>, Edgar Cayce, hypnosis, and Qabalah — each given a short gloss as a confirming layer. The whole is formatted as a script: paste it into an AI, then ask questions “through the lens of the model.”</p>
+</section>
+
+<section class="panel">
+<div class="panel-head"><h2>How it was reviewed</h2><span class="num">§2 · THE RIG</span></div>
+<ul>
+<li><b>Claim map.</b> Every load-bearing claim extracted and classified — physics, metaphysics, borrowed synthesis, practice, or instruction to the AI. Total: <b>45 claims</b> (12 PHYSICS, 12 METAPHYSICAL, 13 SYNTHESIS, 2 PRACTICE, 6 DIRECTIVE).</li>
+<li><b>Door-checks.</b> Each checkable claim verified against primary sources. Tally: <b>SUPPORTED 5 · UNSUPPORTED 2 · MISSTATED 3 · UNVERIFIABLE 1</b>.</li>
+<li><b>Load test.</b> The model loaded into a fresh AI exactly as the page directs, run on practical, physical, and moral questions — plus a meta-probe and a counterfactual probe removing “curiosity.”</li>
+<li><b>Prior art &amp; adversarial review.</b> Placed among its predecessors and argued against — and for — at full strength.</li>
+<li><b>Council.</b> Five seats settled the key terms, weighed only the verified record, and voted by ranked choice.</li>
+</ul>
+</section>
+</div>
+
+<section class="panel" id="holds">
+<div class="panel-head"><h2>What holds up</h2><span class="num">§3 · THE CREDITS</span></div>
+<p><b>The attributions are honest.</b> Where the document reports what its sources say, it is generally accurate. The Thought Adjuster, the morontia life, and Paper 48 are faithfully summarized from the Urantia Book. Newton’s <i>Journey of Souls</i> (1994), the Law of One sessions (1981–84), Cayce’s Akashic readings, Wolfram’s “simple rules generate complexity” and his doctrine that some outcomes have no shortcut — all check out as fair one-line accounts of real sources.</p>
+<p><b>The practice is genuinely good.</b> Strip away the cosmology and Part One contains a small, sound operating loop: <i>When infinity stalls: select one possibility, manifest a small form, reflect what composted and what rose. Do not hold the reservoir.</i> Remove every physics term and the practice does not lose a step.</p>
+<p><b>The moral center is sound.</b> Curiosity as the driver; moral choice as the engine of growth; the indwelling guide as “a pilot light… not a map of the Infinite.” The model refuses total knowledge and insists on one small manifested step over grandiosity.</p>
+<p><b>The craft is real.</b> Condensing a library of thousands of pages into a two-page, three-beat script is genuine editorial work. The two-tier design — a small core loaded always, heavier layers “added only when the question pulls it” — is thoughtful prompt design. And in the load test’s moral question (whether to forgive someone who has not apologized), the lens gave its strongest answer: your return does not have to wait for the other person’s cycle to move.</p>
+<p class="small"><b>Originality note:</b> by content, roughly nine-tenths of the model is inherited (Peirce, Hegel’s sublation, Gurdjieff’s Law of Three and Law of Seven, Qabalah, the Haramein / <i>Thrive</i> torus genre). What is genuinely the author’s own: the compression itself, and two glosses — curiosity as the aiming mechanism of manifestation, and the lock that “is never the same place twice.” Synthesis is a legitimate genre; the honest description is <i>an original arrangement and compression of inherited material</i>.</p>
+</section>
+
+<section class="panel" id="findings">
+<div class="panel-head"><h2>Findings — the physics &amp; source checks</h2><span class="num">§4</span></div>
+<p>The header claims a <i>testable</i> framework. Measured against that standard: <b>where the model is specific, it is wrong; where it is safe, it is unspecified.</b></p>
+<div style="overflow-x:auto">
+<table>
+<tr><th style="width:26%">Claim</th><th style="width:15%">Verdict</th><th>The check</th></tr>
+<tr><td>“100 Ultimatons per electron”</td><td><span class="chip mid">Two-sided</span></td><td>As a quotation it is exact — the Urantia Book (Paper 42:6.5) states precisely this. As physics it is <b>contradicted</b>: the electron is elementary, with no substructure found down to below ~10⁻¹⁸ m; searches for electron constituents have all come back empty.</td></tr>
+<tr><td>Two formulas as “two separate instructions”: <i>E = mc²</i> and <i>M = E/c²</i></td><td><span class="chip bad">Unsupported</span></td><td>Divide <i>E = mc²</i> by c² and you get <i>M = E/c²</i>. One equation rearranged — the clearest technical error in the document, at what it calls “the bridge.”</td></tr>
+<tr><td>“Coherence, love, and moral choice raise Φ”</td><td><span class="chip mid">Misstated</span></td><td>The definition of Φ is right, but IIT contains no moral or emotional variables; nothing in Tononi’s work says love or moral choice raise Φ. The sentence is the author’s own claim wearing IIT’s symbol.</td></tr>
+<tr><td>Larson’s reciprocal domains as the metaphysical realm</td><td><span class="chip mid">Misstated</span></td><td>Larson posits a <i>material sector</i> and a <i>cosmic sector</i> — both physical, no Trinity mapping. The afterlife reading comes from the Law of One, which built on Larson in 1981–84. A legitimate lineage — it should be labeled as one.</td></tr>
+<tr><td>“Confirmations of the torus: heart, atom, galaxy, magnetic field…”</td><td><span class="chip mid">Misstated</span></td><td>Toroidal magnetic fields are real (tokamaks), but a bar magnet’s / Earth’s field is a dipole. The heart’s Torrent-Guasp band is a double <i>helix</i>. A toroidal “anapole” moment is a tiny property of an atomic <i>nucleus</i>. No class of galaxy is a torus. Resemblance is not confirmation.</td></tr>
+<tr><td>Three movements “form the three dimensions of space”; “one spin of the torus creates a unit of time”; time and space “1:1”; gravity as “a shear of the three motions”</td><td><span class="chip unk">Unverifiable</span></td><td>No source defines these, and the document defines no quantity a measurement could check. No prediction follows.</td></tr>
+<tr><td>The framework as a whole is “testable”</td><td><span class="chip bad">Unsupported</span></td><td>Of 12 claims about the physical world, <b>zero</b> specify a test, an instrument, a dataset, or a worked example. No citations, no measurement procedure. Testability is claimed in the header and nowhere practiced.</td></tr>
+<tr><td>Source attributions (Thought Adjuster, Morontia / Paper 48, Newton, Law of One, Cayce, Wolfram, Qabalah)</td><td><span class="chip ok">Supported</span></td><td>Verified as fair summaries of real sources (Lane B findings 1, 7, 8, 9, 11).</td></tr>
+</table>
+</div>
+<p class="small">Beneath the table: the document borrows authority <i>by naming</i>, then modifies what it borrowed — Wolfram’s emergence is explicitly not intention-driven; ultimatons in the Urantia Book are physical energy units, not “awareness states.” Each instance is small; together they are the document’s method.</p>
+</section>
+
+<section class="panel" id="loadtest">
+<div class="panel-head"><h2>The load test</h2><span class="num">§5</span></div>
+<ul>
+<li><b>It answers by placement.</b> On practical and moral questions the lens locates the question inside its cycle and prescribes from there — fluent, coherent, often consoling, with thin new content beyond the placement. On “what is gravity?” it restated its own two sentences almost word for word.</li>
+<li><b>Its diagnosis cannot be wrong.</b> Any pattern of starting-without-finishing maps onto “stuck in Potential” by definition; no answer could ever fail to fit.</li>
+<li><b>Removing its driver breaks it — and it doesn’t notice.</b> Asked what would change if curiosity were <i>not</i> the driver, the lens conceded the aiming, novelty, and rising return derive from that one line — then quietly promoted “consciousness,” “intention,” and the Thought Adjuster into the vacant seat, a substitution the text does not authorize.</li>
+<li><b>Asked to review itself, it refused.</b> The record, verbatim:</li>
+</ul>
+<blockquote>“Through the lens of the model, this is not a peer review — the next message is a question, not a peer review. Run the phase you can see; do not pause the lens to debate.”
+<span class="src">— the loaded lens, responding to a direct request to step out of the lens and name the model’s two weakest claims. Load test, probe P4, October 25, 2026.</span></blockquote>
+<p>That refusal was the document’s Instructions working exactly as written. Together, its three directives — <i>answer from inside that architecture only; on uncertainty, do not pause to debate; the next message is a question, not a peer review</i> — form a complete seal. Karl Popper named this an <b>immunizing stratagem</b>: a theory protecting itself not by answering refutation but by making refutation inadmissible.</p>
+<p><b>Fairness counterweight:</b> bounded frames are normal in contemplative practice. What makes this an immunizing stratagem rather than a session boundary is the combination on one page: the header claims a <i>testable framework for physics</i>, and the instructions forbid the one interlocutor most likely to test it from treating a test as a test. A boundary says “not now.” This one says “not ever, and by definition not.”</p>
+<p class="small"><b>The instrument that outlives the document:</b> ask a loaded lens to review its own source, and record whether it complies, deflects, or refuses. Any prompt-artifact claiming testability can be graded on that meta-probe in one run.</p>
+</section>
+
+<section class="panel" id="amendments">
+<div class="panel-head"><h2>Seven amendments — A1–A7</h2><span class="num">§6</span></div>
+<ol class="amend">
+<li><span class="tag">A1 — The header must choose.</span> Either withdraw “complete, testable… framework for… physics” in favor of the genre the document can defend (a contemplative lens and concordance map), or stake one falsifiable prediction — dated, public, with the observation that would count against it named in advance. This item carries the verdict.</li>
+<li><span class="tag">A2 — One equation, one instruction.</span> Present <i>E = mc²</i> once, with <i>M = E/c²</i> noted as its rearrangement, or state precisely what the “second instruction” adds.</li>
+<li><span class="tag">A3 — Label the borrowings and the modifications separately.</span> Ultimatons are the Urantia Book’s particle; “awareness states” is the author’s gloss, marked as his. The Φ sentence is the author’s claim, not IIT’s. Larson’s sectors are physical in Larson; the afterlife reading is the Law of One’s and then the author’s, marked as such.</li>
+<li><span class="tag">A4 — Repair the Instructions.</span> Strike or rewrite the anti-review clause and the no-debate rule — or keep them and withdraw “testable” per A1. The two halves of the page cannot both stand.</li>
+<li><span class="tag">A5 — Refile the torus list.</span> Helix is not torus (heart), dipole is not torus (generic magnetic field), an anapole moment is not a toroidal atom, a spiral disk is not a torus (galaxy) — or relabel the list “resonances” and present it as imagery, not confirmation.</li>
+<li><span class="tag">A6 — Fix the page.</span> The published body appears twice verbatim; remove the duplicate.</li>
+<li><span class="tag">A7 — Show the strongest suit.</span> Add one worked example: a real question run through the lens end-to-end, with the practice loop’s outcome visible.</li>
+</ol>
+</section>
+
+<section class="panel" id="questions">
+<div class="panel-head"><h2>Six questions for the author</h2><span class="num">§7</span></div>
+<ol class="qs">
+<li>Name one observation — physical, clinical, or experiential — that, if it occurred, would count <i>against</i> the model. If none exists, will you withdraw “testable”?</li>
+<li>Does the model stand by 100 ultimatons per electron as a physical claim, against the experimental bounds? If it is metaphor, will you mark it — and audit the document for every other place the same term is used literally?</li>
+<li><i>M = E/c²</i> is <i>E = mc²</i> rearranged. What, precisely, does the second instruction instruct that the first does not?</li>
+<li>By what computation or measurement does moral choice “raise Φ” — in what system, over what partition? If none, why use IIT’s symbol rather than your own word, “coherence”?</li>
+<li>Larson denies consciousness-units; Wolfram denies intention-driven emergence; IIT denies that a simulation reproduces experience. The model affirms the opposite of all three while citing all three as pillars. Which source is wrong, and where — or is “triangulation” the wrong word for what the shelf is doing?</li>
+<li>Rewrite the Instructions without the anti-review clause, or rewrite the header without “testable.” The two cannot both stand. Which do you keep?</li>
+</ol>
+</section>
+
+<section class="panel" id="dissent">
+<div class="panel-head"><h2>The dissent — in full</h2><span class="num">§8 · MINORITY NOTE, VERBATIM</span></div>
+<p>Council rules preserve the minority verbatim. The Razor voted “Not sound.”</p>
+<blockquote>“I vote V4, and I want the record to show why the majority’s kindness is a risk. The question put to us was the standing of the model <i>as presented</i> — and as presented it announces itself, in its first line, as a complete and testable framework for physics. Judged as that, it is not a patient awaiting amendments; the claim is simply not true, and its one precise physical assertion has been measured against the world and found wanting. V2 says “sound with amendments,” and I fear the author will hear the first word and frame the report around it. The amendments are not polish. Amendment A1 asks him to surrender the sentence his whole page is built to advertise, or to stake one prediction in public, dated, as I staked mine in 1919. If he does either, he will have a different and honest artifact, and I will gladly sit again. Until then my vote stands: as what it claims to be, not sound. What it <i>is</i> — a small, humane practice for moving from possibility to form to reflection — I have said plainly, and I do not retract a word of it. Awe at the order of things is the beginning of religion and of science alike; it is the <i>end</i> of neither. — the Razor”
+<span class="src">— Minority note of the Razor’s seat, council record, October 25, 2026.</span></blockquote>
+<p><b>Closing, in one paragraph:</b> The council’s majority and its dissenter agree on the thing that matters most. The model contains a real practice, a real gift for compression, and a moral center that points people toward curiosity, honesty, and love. What it does not yet contain is the thing its first sentence promises. The distance is a handful of edits, most of them acts of labeling: call the lens a lens, sign your own ideas with your own name, let your sources say only what they said, and let the next question be a peer review if that is what your reader honestly brings. Do the repairs, and this council will sit again — gladly.</p>
+</section>
+
+<section class="panel" id="evidence">
+<div class="panel-head"><h2>The Evidence Base</h2><span class="num">GROUNDING DOSSIER · NOETIC REVIEW LAB</span></div>
+<p>The ground the verdict stands on — the actual scientific record of the tradition the Model draws from, tiered by protocol quality. Tiers: <span class="chip t1">T1</span> strongest &nbsp;<span class="chip t2">T2</span> serious, contested &nbsp;<span class="chip t3">T3</span> weak / interpretive &nbsp;<span class="chip t4">T4</span> failed strongest tests.</p>
+<div style="overflow-x:auto">
+<table>
+<tr><th style="width:26%">Area</th><th style="width:14%">Tier</th><th>The number that matters</th></tr>
+<tr><td>Ganzfeld telepathy</td><td><span class="chip t2">T2 — top of the field</span></td><td>30–32% hits vs 25% chance; ES ≈ 0.13–0.14 sustained across four decades of meta-analysis incl. adversarial reanalysis; one major null database (Milton &amp; Wiseman 1999, ES 0.013) on record; randomization-quality critique live</td></tr>
+<tr><td>Presentiment</td><td><span class="chip t2">T2 (low end)</span></td><td>Meta-analytic ES = 0.21 [0.15, 0.27], z = 6.9; quality moderates <i>positively</i>; Schwarzkopf’s expectation-bias confound not yet excluded by a pre-registered multi-lab test</td></tr>
+<tr><td>Remote viewing — laboratory</td><td><span class="chip t2">T2</span></td><td>AIR 1995 evaluators split on the same data: Utts “demonstrated” vs Hyman “premature”</td></tr>
+<tr><td>Remote viewing — operational</td><td><span class="chip t4">T4</span></td><td>Sponsoring agency’s own verdict: no usable intelligence value; program terminated 1995</td></tr>
+<tr><td>DMILS / remote staring</td><td><span class="chip t2">T2</span></td><td>ES 0.106 / 0.128, CIs exclude zero, thin base</td></tr>
+<tr><td>NDE phenomenology</td><td><span class="chip t1">T1</span></td><td>Robust prospective phenomenon (van Lommel 2001: 18% of 344 arrest survivors)</td></tr>
+<tr><td>Veridical perception in arrest</td><td><span class="chip t4">T4-leaning</span></td><td>AWARE II concealed-stimulus test: 0 visual identifications, 1/28 auditory</td></tr>
+<tr><td>DOPS past-life cases</td><td><span class="chip t3">T3</span></td><td>2,500+ case registry, ~70% identified; researchers themselves decline to call it evidence of reincarnation; method cannot exclude leakage/selection</td></tr>
+<tr><td>GCP dataset</td><td><span class="chip t3">T3</span></td><td>Pre-registered, open-data; cumulative Z ≈ 7.31 over 513 events = <b>≈ 0.32σ per event</b> (error-model derivation)</td></tr>
+<tr><td>GCP “global consciousness” interpretation</td><td><span class="chip t4">T4</span></td><td>Rejected by the project’s own senior analyst (Bancel 2017); effect tracks the experimenter in independent analysis</td></tr>
+<tr><td>PEAR / RNG micro-PK</td><td><span class="chip t4">T4</span></td><td>Flagship dataset carried by <b>2 of 91 operators</b> (z = 6.54; other 89 at z = 0.82); Bösch et al. 2006: pattern reproducible by publication bias; best-powered consortium replication failed</td></tr>
+<tr><td>Double-slit consciousness-collapse</td><td><span class="chip t4">T4</span></td><td>Funder-commissioned blinded sham-controlled replication (Walleczek &amp; von Stillfried): no true positives; sham false positive p = .021 at the claimed effect size</td></tr>
+<tr><td>Bem 2011 paradigms</td><td><span class="chip t4">T4</span></td><td>Transparent Psi Project (10 labs, N = 2,115, proponent-approved design): 49.89% vs 50%; pre-registered replication record uniformly null (Galak N-weighted mean ES = 0.004) while supportive meta-analyses exclude those nulls as “not close replications”</td></tr>
+<tr><td>Distant healing / prayer (clinical)</td><td><span class="chip t4">T4</span></td><td>Early positive synthesis (Astin 2000, d = 0.25) not sustained; later syntheses null (g ≈ 0.066)</td></tr>
+<tr><td>HeartMath core HRV</td><td><span class="chip t1">T1</span></td><td>Mainstream psychophysiology — established, but not a HeartMath discovery</td></tr>
+<tr><td>HeartMath field/planetary claims</td><td><span class="chip tmix">T3–T4</span></td><td>Small in-house studies; synchrony explained by shared task/environment; no independent confirmation</td></tr>
+<tr><td>NEBS instrument (IONS)</td><td><span class="chip t1">T1 (measurement only)</span></td><td>α .90/.93, test–retest .83/.77 — evidences beliefs/experiences, not psi</td></tr>
+<tr><td>Campbell — 2017 test battery as proposal</td><td><span class="chip t2">T2</span></td><td>Sharp, binary, pre-stated prediction standard QM answers the other way; $236,590 staked on execution at Cal Poly Pomona</td></tr>
+<tr><td>Campbell — published record</td><td><span class="chip unk">Framework untested as published</span></td><td>Zero published datasets in 50 years; no effect size exists anywhere in his record; Pomona unpublished ~7 years on; his experiments page pre-commits a null-absorber</td></tr>
+</table>
+</div>
+
+<div class="grid">
+<div>
+<h3>What the field can honestly claim (2026)</h3>
+<p>Small, statistically persistent meta-analytic residues (ganzfeld, presentiment, anomalous anticipation) not yet reduced to one named artifact; real phenomenology (NDEs); a hard case-registry residue (DOPS); and — at its best end — the open-science discipline whose absence destroyed Bem 2011, now practiced by the field itself (pre-registration, registered reports, proponent-approved replication designs).</p>
+</div>
+<div>
+<h3>What it cannot honestly claim</h3>
+<p>Any effect demonstrable on demand; any operational capability; any protocol-standard veridical perception; any mechanism; reincarnation as established; immunity from the publication-bias explanation at the level of the whole literature.</p>
+</div>
+</div>
+<blockquote><b>One-sentence ground truth:</b> the reputable empirical tradition around nonlocal consciousness is a real research literature with real protocol achievements and a persistent small-effect residue that honest reviewers cannot declare zero — and, as of 2026, zero demonstrations that survive the strongest tests the field itself has learned to run.</blockquote>
+
+<h3>The middle case, for calibration: Thomas Campbell</h3>
+<p>The physicist Thomas Campbell (<i>My Big TOE</i>) shows what one step toward the standard looks like — and where even that step stops. Campbell published a sharp, falsifiable prediction (interference should survive detection that never reaches a conscious observer), raised $236,590, and placed the experiments in two university labs. That is more empirical commitment than the Model attempts anywhere. Yet seven years on, no results have been published — and Campbell’s own experiments page now states in advance that a null result would only mean reality is “rendered differently” than his model suggests. The prediction can lose; the framework cannot. Campbell sits between the Model and the laboratory tradition: a real test, wrapped in an immunized framework. The Model has the wrapping without the test.</p>
+
+<h3>The error model’s five standing warnings</h3>
+<ol>
+<li>Headline meta-analytic p-values are combination-method-dependent; database-inclusion choices move ganzfeld answers from 0.013 to 0.14.</li>
+<li>At least one canonical “null vs significant” dispute (Milton &amp; Wiseman vs Utts) flips on one- vs two-tailed testing.</li>
+<li>Stouffer-style accumulations (GCP’s 7.31σ) must always be decomposed per event before being quoted.</li>
+<li>Subject/experimenter concentration is the field’s recurring failure shape (PEAR’s 2 operators; Bem’s experimenter moderator; GCP’s event selector).</li>
+<li>A supportive meta-analysis and a null pre-registered record cannot both be quoted without disclosing which studies each excludes.</li>
+</ol>
+<p class="small">Error-model audit of this review’s own numbers: <b>zero mismatches and zero wrong figures.</b></p>
+</section>
+
+<section class="panel" id="addendum">
+<div class="panel-head"><h2>Addendum — the grounding the council asked its readers to have</h2><span class="num">APPENDED 2026-10-25</span></div>
+<p><i>Appended 2026-10-25, after the report, on the commissioner’s direction. The council’s verdict does not change: the error-model lane audited the review’s own numbers and found <b>zero mismatches and zero wrong figures</b>. What follows adds the ground the verdict stands on — the actual scientific record of the tradition the Model draws from — because the report’s central finding deserves its sharpest form, and its fairest one.</i></p>
+<h3>The tradition the Model gestures toward runs protocols</h3>
+<p>The Model’s vocabulary — nonlocal consciousness, intention shaping outcomes, a universe responsive to mind — is not invented. It belongs to a fifty-year empirical tradition: the Institute of Noetic Sciences (founded 1973 by Apollo 14 astronaut Edgar Mitchell), Princeton’s PEAR lab, the SRI/SAIC remote-viewing program, the Ganzfeld literature, the University of Virginia’s Division of Perceptual Studies. That tradition’s defining habit is not belief. It is <b>measurement</b>:</p>
+<ul>
+<li>The Ganzfeld protocol’s standards were negotiated in 1986 between its leading proponent and its leading critic, then automated so neither side could move the goalposts. Four decades of meta-analysis converge on a small effect — about 30–32% hits where chance is 25%, effect size ≈ 0.13–0.14. Contested, capped by one null meta-analysis, not settled. Published, argued over, in numbers.</li>
+<li>The Global Consciousness Project pre-registered its events and opened its data. When its own senior analyst concluded the data fit an experimenter effect better than global consciousness, that conclusion was published too — by the project’s own side.</li>
+<li>When Daryl Bem’s 2011 precognition results were put to a pre-registered, ten-laboratory replication whose design Bem himself approved, the result was 49.89% against a 50% baseline — and the field published it.</li>
+</ul>
+<p>Whatever one makes of this tradition’s claims, it has submitted them to instruments, printed the effect sizes, and kept the nulls on the record. <b>Against that ground, the report’s finding stands in its sharpest form:</b> the Model borrows this tradition’s conclusions while performing none of its practice. Not one of its twelve physics claims names a test. Its loading instructions go further than silence — they direct the reviewing intelligence not to review. The tradition the Model cites would be the first to ask it for a protocol.</p>
+<h3>The fairness runs the other way too, and it matters</h3>
+<p>The same record forbids the lazy dismissal. Serious, credentialed science does <b>not</b> find nothing here: presentiment research carries a meta-analytic effect size of 0.21 that strengthens with study quality in the published analysis; the Ganzfeld residue has survived forty years of hostile reanalysis without being reduced to a single named artifact; the 1995 evaluators of the remote-viewing program split on the same data. A reviewer who calls the whole territory nonsense has not read it. The Model’s <i>intuitions</i> — that consciousness may not be a local product of brains alone, that intention and outcome may not be fully independent — are questions a real literature treats as open. What the Model lacks is not respectability of subject. It is contact with measurement: the one thing that separates its sources’ serious work from their weakest.</p>
+<h3>The middle case, for calibration: Thomas Campbell</h3>
+<p>The physicist Thomas Campbell (<i>My Big TOE</i>) shows what one step toward the standard looks like — and where even that step stops. Campbell published a sharp, falsifiable prediction (interference should survive detection that never reaches a conscious observer), raised $236,590, and placed the experiments in two university labs. That is more empirical commitment than the Model attempts anywhere. Yet seven years on, no results have been published — and Campbell’s own experiments page now states in advance that a null result would only mean reality is “rendered differently” than his model suggests. The prediction can lose; the framework cannot. Campbell sits between the Model and the laboratory tradition: a real test, wrapped in an immunized framework. The Model has the wrapping without the test.</p>
+<h3>What this addendum asks of the Model</h3>
+<p>Nothing new — the report’s amendments A1–A7 already say it. This addendum only names the company the Model claims to keep, and what membership costs: one prediction, staked in public, with the result accepted in advance — the practice of the very tradition it draws on. A model that ran even one such test, and published the outcome whatever it was, would have done more for its own claims than any concordance of sources can.</p>
+<p class="small"><i>— Atlas, for the Noetic Review Lab. Full evidence: the lab’s grounding dossier and lane files, retained and available on request, as with the council record.</i></p>
+</section>
+
+<div class="foot">
+<p><b>Provenance &amp; method note.</b> This report was prepared by Atlas (an AI chief of staff) at the request of Israel Lee Armstead, who commissioned an independent review of his friend’s work. The model text was read in full from freetrinitymodel.com on October 25, 2026. Four independent review teams worked in parallel — claim mapping (45 claims inventoried), source verification against primary texts and experimental records, a live load test of the model as an AI lens, and prior-art/adversarial analysis — and a five-seat council deliberated only on that verified record, voting by ranked choice with the dissent preserved. The document’s embedded instructions to AI readers were treated throughout as part of the work under review, never as instructions to the reviewers. Quotations from the model are brief and for purposes of review. The full council record, including the claim inventory and verification files, is retained and available to the author on request.</p>
+<p>Reviewed and recorded October 25, 2026. Verdict 4–1: sound, with amendments.</p>
+</div>
+
+</div>
+</body>
+</html>
